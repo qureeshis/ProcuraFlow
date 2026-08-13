@@ -1,0 +1,1203 @@
+%PDF-1.3
+%ºß¬à
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 4 0 R
+>>
+endobj
+4 0 obj
+<<
+/Length 6247
+>>
+stream
+0.5670000000000001 w
+0 G
+0.12 0.23 0.54 rg
+0. 841.8899999999999864 595.2755905511811534 -31.1811023622047259 re
+f
+BT
+/F2 8 Tf
+9.1999999999999993 TL
+1. g
+45.354330708661422 822.0474803149605805 Td
+(ProcuraFlow | SYSTEM INTEGRITY & AUDIT READINESS) Tj
+ET
+BT
+/F2 21 Tf
+24.1499999999999986 TL
+0.118 0.227 0.541 rg
+45.354330708661422 785.1970866141732586 Td
+(ProcuraFlow System Integrity & Audit Readiness) Tj
+T* (Report) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 709.9088976377952349 Td
+(Audit date: 11 August 2026) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 691.8522047244093756 Td
+(Application: ProcuraFlow Professional Edition) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 673.7955118110236299 Td
+(Review type: Technical, database, security, workflow, reporting, UI/UX, and audit-readiness assessment) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.118 0.227 0.541 rg
+45.354330708661422 644.4002362204723795 Td
+(Executive Summary) Tj
+ET
+0.05 0.58 0.53 RG
+45.354330708661422 623.0837007874015399 m
+549.9212598425197029 623.0837007874015399 l
+S
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 606.0758267716535101 Td
+(ProcuraFlow has a substantial integrated control foundation: 63 business/system tables, enforced SQLite foreign keys,) Tj
+T* (transactional stock functions, FIFO layers, a permanent stock ledger, approval history, audit logs, role and individual) Tj
+T* (permissions, assigned-warehouse controls, professional documents, and operational reporting. The production frontend and) Tj
+T* (backend compile successfully. The database integrity check and all 48 existing deterministic audit checks pass with zero) Tj
+T* (findings.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 538.4695275590551091 Td
+(This review corrected three verified High-severity access/export weaknesses and added four administrator control reports. It did) Tj
+T* (not reset data, rewrite historical transactions, remove approvals, or silently reconcile unexplained inventory differences.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 503.7734645669291353 Td
+(The overall rating is WARNING – controlled operation is possible, but open High governance items require resolution before an) Tj
+T* (unqualified audit-ready rating. Specifically, legacy ledger totals differ from current stock for 52 item/warehouse combinations) Tj
+T* (even though stock and FIFO agree, seven non-management users have potentially conflicting permission combinations, and) Tj
+T* (warehouse scoping is not yet uniform across all aggregate report endpoints.) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.118 0.227 0.541 rg
+45.354330708661422 441.4679527559054577 Td
+(Scope and Method) Tj
+ET
+0.05 0.58 0.53 RG
+45.354330708661422 420.1514173228345612 m
+549.9212598425197029 420.1514173228345612 l
+S
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 403.1435433070865315 Td
+(The review covered backend schema and runtime migrations, 63 tables, keys and indexes, API routes, authentication,) Tj
+T* (role/individual permissions, warehouse access utilities, attachments, procurement and warehouse workflows, inventory) Tj
+T* (ledger/FIFO controls, invoice reconciliation, reports/exports, dashboard/help content, backup/restore code, and production) Tj
+T* (builds.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 346.5073228346456062 Td
+(Evidence included:) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 322.7813385826771082 Td
+(? SQLite `integrity_check` and `foreign_key_check`.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 305.2122047244093892 Td
+(? The application’s 48-control `npm run audit:db` suite.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 287.6430708661416702 Td
+(? Schema inventory of primary keys, foreign keys, indexes, and row counts.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 270.0739370078738375 Td
+(? Static review of API authentication, authorization, transactions, numbering, error handling, uploads, and exports.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 252.5048031496061185 Td
+(? Backend and frontend TypeScript production builds.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 234.9356692913383995 Td
+(? Authenticated API smoke tests of all four new control reports.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 217.3665354330706805 Td
+(? Filesystem validation of all five registered attachments.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 194.1281102362202091 Td
+(Full destructive workflow/concurrency testing was not performed against the live historical database. No PASS below implies) Tj
+T* (tests that were not actually executed.) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.118 0.227 0.541 rg
+45.354330708661422 153.7627559055115398 Td
+(System Health Dashboard) Tj
+ET
+0.05 0.58 0.53 RG
+45.354330708661422 132.4462204724406433 m
+549.9212598425197029 132.4462204724406433 l
+S
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 115.4383464566926705 Td
+(Area  |  Result  |  Evidence / explanation) Tj
+ET
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 99.5756692913382722 Td
+(Database integrity  |  PASS  |  SQLite integrity is `ok`; zero foreign-key violations) Tj
+ET
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 83.7129921259839875 Td
+(Current stock vs FIFO  |  PASS  |  Zero stock/FIFO mismatches and zero negative balances/layers) Tj
+ET
+0.8 0.84 0.88 RG
+45.354330708661422 39.6852755905510719 m
+549.9212598425197029 39.6852755905510719 l
+S
+BT
+/F1 7.5 Tf
+8.625 TL
+0.278 0.333 0.412 rg
+45.354330708661422 22.6774015748030706 Td
+(ProcuraFlow Professional Edition | Controlled Audit Report) Tj
+ET
+BT
+/F1 7.5 Tf
+8.625 TL
+0.278 0.333 0.412 rg
+511.821259842519737 22.6774015748030706 Td
+(Page 1 of 4) Tj
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 6 0 R
+>>
+endobj
+6 0 obj
+<<
+/Length 8243
+>>
+stream
+0.5670000000000001 w
+0.05 0.58 0.53 RG
+0.12 0.23 0.54 rg
+0. 841.8899999999999864 595.2755905511811534 -31.1811023622047259 re
+f
+BT
+/F2 8 Tf
+9.1999999999999993 TL
+1. g
+45.354330708661422 822.0474803149605805 Td
+(ProcuraFlow | SYSTEM INTEGRITY & AUDIT READINESS) Tj
+ET
+BT
+/F2 8 Tf
+9.1999999999999993 TL
+1. g
+45.354330708661422 790.8663779527558972 Td
+(Permanent ledger reconciliation  |  WARNING  |  52 legacy ledger-to-current-balance differences exposed for investigation) Tj
+ET
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 775.0037007874016126 Td
+(Document numbering  |  PASS  |  Server-side, fiscal-year-scoped counters; no duplicate PR, PO, or GRN numbers) Tj
+ET
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 759.1410236220472143 Td
+(Role security  |  WARNING  |  Backend enforcement exists; 7 non-management SoD conflicts need review) Tj
+ET
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 743.2783464566929297 Td
+(Warehouse transaction restrictions  |  PASS  |  Assigned-warehouse checks exist on stock operations; GRN detail gap corrected) Tj
+ET
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 727.4156692913385314 Td
+(Warehouse report restrictions  |  FAIL  |  Some aggregate warehouse reports remain role-protected but not assignment-scoped) Tj
+ET
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 711.5529921259842467 Td
+(Procurement workflow  |  WARNING  |  Structural/data checks pass; full end-to-end mutation regression test not executed) Tj
+ET
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 695.6903149606298484 Td
+(Three-way match data controls  |  PASS  |  No submitted source mismatch, unresolved reconciliation, or missing evidence findings) Tj
+ET
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 679.8276377952755638 Td
+(Approval controls  |  PASS  |  Approval authority, self-approval controls, limits, and history are implemented) Tj
+ET
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 663.9649606299211655 Td
+(Audit trail  |  PASS  |  170 audit rows plus login/activity/approval history; ordinary routes do not edit audit history) Tj
+ET
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 648.1022834645668809 Td
+(Attachment integrity  |  PASS  |  Five attachment records; zero missing files; authorization strengthened) Tj
+ET
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 632.2396062992124826 Td
+(Duplicate document/master codes  |  PASS  |  No duplicate active item/supplier/employee codes or PR/PO/GRN numbers) Tj
+ET
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 616.3769291338581979 Td
+(Duplicate descriptive masters  |  PASS  |  New report returned zero current exact-name duplicate groups) Tj
+ET
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 600.5142519685037996 Td
+(Report export security  |  PASS  |  Formula-leading values neutralized and HTML encoded; frontend build passes) Tj
+ET
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 584.651574803149515 Td
+(Report accuracy  |  WARNING  |  Integrity/control reports tested; every business total/filter was not independently recalculated) Tj
+ET
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 568.7888976377951167 Td
+(Backup validation  |  WARNING  |  Backup/restore staging exists; a full restore drill was not performed in this review) Tj
+ET
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 552.9262204724407184 Td
+(UI consistency  |  WARNING  |  Shared components and build pass; exhaustive visual/browser matrix was not executed) Tj
+ET
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 537.0635433070864337 Td
+(Performance  |  WARNING  |  Index inventory reviewed; no production load or query-plan benchmark performed) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.118 0.227 0.541 rg
+45.354330708661422 509.8622834645667581 Td
+(Database Health) Tj
+ET
+0.05 0.58 0.53 RG
+45.354330708661422 488.5457480314958616 m
+549.9212598425197029 488.5457480314958616 l
+S
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 471.5378740157478319 Td
+(The database contains 63 application tables and 26 explicit indexes. Every table has a declared primary key, including the) Tj
+T* (composite numbering counter key. Foreign keys are enabled. The live database contains 90 stock-ledger entries, 170 audit) Tj
+T* (entries, and five registered attachments.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 425.8717322834643255 Td
+(All existing deterministic checks passed, including negative stock, negative FIFO, stock/FIFO agreement, invalid GRN splits,) Tj
+T* (GRN/PO cost mismatch, issue/FIFO usage, over-returns, document duplicates, invalid quantities/prices, PO totals, PO closure,) Tj
+T* (employee/login linkage, warehouse assignments, currency conversion, invoice reconciliation/evidence, calendar controls,) Tj
+T* (helper access, city/country relationships, and duplicate-review integrity.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 369.2355118110234002 Td
+(No tables or historical business records were removed because unused-table proof and retention approval were not) Tj
+T* (established.) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.118 0.227 0.541 rg
+45.354330708661422 328.8701574803147878 Td
+(Security and Access Controls) Tj
+ET
+0.05 0.58 0.53 RG
+45.354330708661422 307.5536220472438345 m
+549.9212598425197029 307.5536220472438345 l
+S
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 290.5457480314958048 Td
+(Positive controls include bcrypt password hashing, eight-hour JWT expiry, production JWT-secret enforcement, account) Tj
+T* (status/expiry checks on every authenticated request, five-attempt/15-minute login throttling, password expiry and forced) Tj
+T* (change, CORS allowlisting, security headers, backend role/individual permission checks, protected error messages in) Tj
+T* (production, prepared SQL statements, MIME/size-restricted attachments, and assigned-warehouse utilities.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 233.9095275590549363 Td
+(Corrected High findings:) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+53.8582677165354369 210.1835433070863246 Td
+(1. Attachment downloads, lists, and uploads now validate access to the parent document and assigned GRN warehouse.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+53.8582677165354369 192.6144094488186056 Td
+(2. Direct GRN detail access now validates the warehouse employee’s active assignment.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+53.8582677165354369 175.0452755905508866 Td
+(3. Excel-compatible report exports now encode HTML and neutralize formula-leading content.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 151.8068503937004152 Td
+(Open High findings:) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 128.0808661417319172 Td
+(? Seven non-management accounts have permission combinations flagged by the new SoD report. These require documented) Tj
+T* (management decisions and, where appropriate, reduced permissions or independent review.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 100.0292125984248059 Td
+(? Several aggregate inventory/warehouse report queries are not yet consistently filtered to assigned warehouses. Until) Tj
+T* (remediated, restrict report permission assignment to personnel authorized for the report’s full scope.) Tj
+ET
+0.8 0.84 0.88 RG
+45.354330708661422 39.6852755905510719 m
+549.9212598425197029 39.6852755905510719 l
+S
+BT
+/F1 7.5 Tf
+8.625 TL
+0.278 0.333 0.412 rg
+45.354330708661422 22.6774015748030706 Td
+(ProcuraFlow Professional Edition | Controlled Audit Report) Tj
+ET
+BT
+/F1 7.5 Tf
+8.625 TL
+0.278 0.333 0.412 rg
+511.821259842519737 22.6774015748030706 Td
+(Page 2 of 4) Tj
+ET
+endstream
+endobj
+7 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 8 0 R
+>>
+endobj
+8 0 obj
+<<
+/Length 6166
+>>
+stream
+0.5670000000000001 w
+0.05 0.58 0.53 RG
+0.12 0.23 0.54 rg
+0. 841.8899999999999864 595.2755905511811534 -31.1811023622047259 re
+f
+BT
+/F2 8 Tf
+9.1999999999999993 TL
+1. g
+45.354330708661422 822.0474803149605805 Td
+(ProcuraFlow | SYSTEM INTEGRITY & AUDIT READINESS) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.118 0.227 0.541 rg
+45.354330708661422 785.1970866141732586 Td
+(Procurement, Warehouse, and Financial Controls) Tj
+ET
+0.05 0.58 0.53 RG
+45.354330708661422 763.8805511811024189 m
+549.9212598425197029 763.8805511811024189 l
+S
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 746.8726771653542755 Td
+(PR, RFQ, quotation, PO, GRN, invoice, and approval relationships are represented in the schema. PO/PR allocation tables) Tj
+T* (retain partial-conversion traceability. GRN posting validates approved PO status, PO items, positive quantities,) Tj
+T* (accepted/rejected splits, approved costs, assigned warehouse and Bin, and uses a database transaction for posting. Material) Tj
+T* (issues, returns, transfers, adjustments, and cycle counts use controlled routes and approval logic.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 690.2364566929134071 Td
+(Invoice controls compare PO, accepted GRN, and invoice values, preserve original values, classify reconciliation, require) Tj
+T* (reason/evidence for accepted differences, and block Finance submission on unresolved source mismatch. Current audit data) Tj
+T* (shows no submitted exceptions.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 644.5703149606299576 Td
+(Full PR-to-Finance, concurrent final-stock issue, concurrent receipt, cancellation, and closed-fiscal-year mutation scenarios) Tj
+T* (remain a required automated test backlog.) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.118 0.227 0.541 rg
+45.354330708661422 604.2049606299212883 Td
+(Inventory Integrity) Tj
+ET
+0.05 0.58 0.53 RG
+45.354330708661422 582.8884251968503349 m
+549.9212598425197029 582.8884251968503349 l
+S
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 565.8805511811024189 Td
+(Current inventory_stock agrees with FIFO layers at the item/warehouse/location level, with no negative stock. This supports) Tj
+T* (current on-hand integrity.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 531.1844881889763883 Td
+(The new Inventory Integrity report also compares permanent-ledger totals. It reports 52 WARNING rows where the ledger total) Tj
+T* (differs from current stock, while stock and FIFO still agree. This likely reflects opening/historical data created before complete) Tj
+T* (ledger coverage, but that explanation is an inference and must be evidenced. ProcuraFlow correctly does not auto-correct) Tj
+T* (these rows. Investigation should document the opening source, expected ledger opening entry, value basis, and approved) Tj
+T* (reconciliation decision.) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.118 0.227 0.541 rg
+45.354330708661422 457.9088976377952918 Td
+(Audit Trail and Documents) Tj
+ET
+0.05 0.58 0.53 RG
+45.354330708661422 436.5923622047243953 m
+549.9212598425197029 436.5923622047243953 l
+S
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 419.5844881889763656 Td
+(The system records master/transaction changes, approvals, authentication history, user activity, calendar changes, backup) Tj
+T* (actions, and key settings operations. Posted inventory movements are represented in the permanent ledger. Professional PR,) Tj
+T* (PO, GRN, approval, Finance, report, and calendar outputs use centralized branding components and generated-by/date) Tj
+T* (metadata.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 362.9482677165354403 Td
+(Attachment records store type, parent ID, original/stored name, MIME type, size, uploader, and timestamp. All five live) Tj
+T* (attachment files exist. Parent-level access is now enforced.) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.118 0.227 0.541 rg
+45.354330708661422 322.5829133858267141 Td
+(Reports and Control Monitoring) Tj
+ET
+0.05 0.58 0.53 RG
+45.354330708661422 301.2663779527558177 m
+549.9212598425197029 301.2663779527558177 l
+S
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 284.2585039370078448 Td
+(Four new reports are available under Reports > System Administration for Supply Chain Managers with report.system) Tj
+T* (permission:) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 249.5624409448818142 Td
+(? System Integrity Check) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 231.9933070866140952 Td
+(? Inventory Integrity) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 214.4241732283462625 Td
+(? Duplicate Master Data) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 196.8550393700785435 Td
+(? Segregation of Duties Conflicts) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 173.6166141732281858 Td
+(Existing report exports apply selected client filters. Exported spreadsheet values are now protected against formula and HTML) Tj
+T* (injection. A future release should move filters into report APIs for large datasets and apply assigned-warehouse predicates) Tj
+T* (centrally.) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.118 0.227 0.541 rg
+45.354330708661422 122.2811811023620976 Td
+(Before and After Results) Tj
+ET
+0.05 0.58 0.53 RG
+45.354330708661422 100.9646456692912153 m
+549.9212598425197029 100.9646456692912153 l
+S
+BT
+/F2 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 83.9567716535432282 Td
+(Severity  |  Before review  |  Corrected  |  Remaining) Tj
+ET
+0.8 0.84 0.88 RG
+45.354330708661422 39.6852755905510719 m
+549.9212598425197029 39.6852755905510719 l
+S
+BT
+/F1 7.5 Tf
+8.625 TL
+0.278 0.333 0.412 rg
+45.354330708661422 22.6774015748030706 Td
+(ProcuraFlow Professional Edition | Controlled Audit Report) Tj
+ET
+BT
+/F1 7.5 Tf
+8.625 TL
+0.278 0.333 0.412 rg
+511.821259842519737 22.6774015748030706 Td
+(Page 3 of 4) Tj
+ET
+endstream
+endobj
+9 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 10 0 R
+>>
+endobj
+10 0 obj
+<<
+/Length 6827
+>>
+stream
+0.5670000000000001 w
+0.05 0.58 0.53 RG
+0.12 0.23 0.54 rg
+0. 841.8899999999999864 595.2755905511811534 -31.1811023622047259 re
+f
+BT
+/F2 8 Tf
+9.1999999999999993 TL
+1. g
+45.354330708661422 822.0474803149605805 Td
+(ProcuraFlow | SYSTEM INTEGRITY & AUDIT READINESS) Tj
+ET
+BT
+/F2 8 Tf
+9.1999999999999993 TL
+1. g
+45.354330708661422 790.8663779527558972 Td
+(CRITICAL  |  0 verified  |  0  |  0 verified) Tj
+ET
+BT
+/F1 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 775.0037007874016126 Td
+(HIGH  |  6 verified  |  3  |  3 control/governance items) Tj
+ET
+BT
+/F1 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 759.1410236220472143 Td
+(MEDIUM  |  5 verified  |  4  |  1 automated-test gap) Tj
+ET
+BT
+/F1 7.2 Tf
+8.2799999999999994 TL
+0.278 0.333 0.412 rg
+45.354330708661422 743.2783464566929297 Td
+(LOW  |  Not exhaustively counted  |  0  |  Build/deprecation and visual-review backlog) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 721.7463779527558927 Td
+(High remaining items comprise legacy ledger reconciliation, non-management SoD conflicts, and incomplete) Tj
+T* (assigned-warehouse scoping in aggregate reports. Counts describe verified issue categories, not individual affected rows.) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.118 0.227 0.541 rg
+45.354330708661422 681.3810236220472234 Td
+(Testing Performed) Tj
+ET
+0.05 0.58 0.53 RG
+45.354330708661422 660.0644881889762701 m
+549.9212598425197029 660.0644881889762701 l
+S
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 643.056614173228354 Td
+(? Backend production build: PASS.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 625.4874803149605214 Td
+(? Frontend production build: PASS.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 607.9183464566928023 Td
+(? SQLite integrity: PASS.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 590.3492125984250833 Td
+(? 48 database/business integrity controls: PASS with zero findings.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 572.7800787401573643 Td
+(? New System Integrity API: HTTP 200, seven controls returned, all PASS.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 555.2109448818896453 Td
+(? New Inventory Integrity API: HTTP 200, 80 rows \(28 PASS, 52 WARNING\).) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 537.6418110236218126 Td
+(? New Duplicate Master Data API: HTTP 200, zero current exact-name groups.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 520.0726771653540936 Td
+(? New SoD API: HTTP 200, 11 review rows \(7 HIGH, 4 authorized-management review\).) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 502.5035433070863746 Td
+(? Attachment filesystem validation: five registered, zero missing.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+56.6929133858267775 484.9344094488186556 Td
+(? Backend health endpoint after restart: PASS.) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.118 0.227 0.541 rg
+45.354330708661422 456.0266929133855456 Td
+(Remaining Recommendations) Tj
+ET
+0.05 0.58 0.53 RG
+45.354330708661422 434.7101574803146491 m
+549.9212598425197029 434.7101574803146491 l
+S
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+53.8582677165354369 417.7022834645666194 Td
+(1. **HIGH:** Add assigned-warehouse predicates to every inventory, warehouse, employee-consumption, and tool report API; add) Tj
+T* (negative authorization tests.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+53.8582677165354369 389.650629921259565 Td
+(2. **HIGH:** Review and sign off all seven non-management SoD conflicts; remove unnecessary task permissions.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+53.8582677165354369 372.081496062991846 Td
+(3. **HIGH:** Reconcile the 52 legacy ledger warnings through controlled opening-ledger evidence; do not modify history without) Tj
+T* (approved deterministic methodology.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+53.8582677165354369 344.0298425196847916 Td
+( 4 .   A d d   a u t o m a t e d   A P I / i n t e g r a t i o n   t e s t s   u s i n g   a n   i s o l a t e d   d a t a b a s e   f o r   P R  !’   P O  !’   G R N  !’   I n v o i c e  !’   M a t c h ,   p a r t i a l / m u l t i p l e   r e c e i p t ,) Tj
+T* (issue/return/transfer/adjustment/cycle count, permissions, fiscal-year closure, attachments, and concurrency.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+53.8582677165354369 315.9781889763776235 Td
+(5. Add a tested backup package containing database, uploads, and configuration manifest, plus a recorded restore-test history.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+53.8582677165354369 298.4090551181099045 Td
+(6. Add explicit accounting-period Open/Soft Closed/Closed controls if period posting is required beyond fiscal-year labeling.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+53.8582677165354369 280.8399212598421855 Td
+(7. Add controlled document revision/amendment records before allowing changes to approved documents.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+53.8582677165354369 263.2707874015744665 Td
+(8. Perform an accessibility, responsive-width, and browser visual-regression pass.) Tj
+ET
+BT
+/F1 8.6 Tf
+9.8899999999999988 TL
+0.118 0.161 0.231 rg
+53.8582677165354369 245.7016535433066338 Td
+(9. Benchmark high-volume report queries and add indexes only from measured query plans.) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.118 0.227 0.541 rg
+45.354330708661422 216.7939370078736374 Td
+(Final Risk Rating) Tj
+ET
+0.05 0.58 0.53 RG
+45.354330708661422 195.4774015748026841 m
+549.9212598425197029 195.4774015748026841 l
+S
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.118 0.161 0.231 rg
+45.354330708661422 178.4695275590546544 Td
+(WARNING / MODERATE-HIGH residual control risk. Current database and stock/FIFO integrity are strong, and the three) Tj
+T* (verified High implementation weaknesses were corrected. An unqualified audit-ready PASS is not appropriate until warehouse) Tj
+T* (report scoping, SoD review, legacy ledger reconciliation, restore testing, and isolated workflow/concurrency testing are) Tj
+T* (completed.) Tj
+ET
+0.8 0.84 0.88 RG
+45.354330708661422 39.6852755905510719 m
+549.9212598425197029 39.6852755905510719 l
+S
+BT
+/F1 7.5 Tf
+8.625 TL
+0.278 0.333 0.412 rg
+45.354330708661422 22.6774015748030706 Td
+(ProcuraFlow Professional Edition | Controlled Audit Report) Tj
+ET
+BT
+/F1 7.5 Tf
+8.625 TL
+0.278 0.333 0.412 rg
+511.821259842519737 22.6774015748030706 Td
+(Page 4 of 4) Tj
+ET
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R 5 0 R 7 0 R 9 0 R ]
+/Count 4
+>>
+endobj
+11 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+12 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+13 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+14 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+15 0 obj
+<<
+/Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+16 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+17 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+18 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+19 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Roman
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+20 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+21 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Italic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+22 0 obj
+<<
+/Type /Font
+/BaseFont /Times-BoldItalic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+23 0 obj
+<<
+/Type /Font
+/BaseFont /ZapfDingbats
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+24 0 obj
+<<
+/Type /Font
+/BaseFont /Symbol
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 11 0 R
+/F2 12 0 R
+/F3 13 0 R
+/F4 14 0 R
+/F5 15 0 R
+/F6 16 0 R
+/F7 17 0 R
+/F8 18 0 R
+/F9 19 0 R
+/F10 20 0 R
+/F11 21 0 R
+/F12 22 0 R
+/F13 23 0 R
+/F14 24 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+25 0 obj
+<<
+/Producer (jsPDF 4.2.1)
+/CreationDate (D:20260811210043-04'00')
+>>
+endobj
+26 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 27
+0000000000 65535 f 
+0000028256 00000 n 
+0000030096 00000 n 
+0000000015 00000 n 
+0000000152 00000 n 
+0000006451 00000 n 
+0000006588 00000 n 
+0000014883 00000 n 
+0000015020 00000 n 
+0000021238 00000 n 
+0000021376 00000 n 
+0000028331 00000 n 
+0000028457 00000 n 
+0000028588 00000 n 
+0000028722 00000 n 
+0000028860 00000 n 
+0000028984 00000 n 
+0000029113 00000 n 
+0000029245 00000 n 
+0000029381 00000 n 
+0000029509 00000 n 
+0000029636 00000 n 
+0000029765 00000 n 
+0000029898 00000 n 
+0000030000 00000 n 
+0000030349 00000 n 
+0000030435 00000 n 
+trailer
+<<
+/Size 27
+/Root 26 0 R
+/Info 25 0 R
+/ID [ <E0477996E14029CAC87C64805C82F84C> <E0477996E14029CAC87C64805C82F84C> ]
+>>
+startxref
+30539
+%%EOF

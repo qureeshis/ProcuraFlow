@@ -1,0 +1,120 @@
+[
+  {
+    "name": "PR created",
+    "status": "PASS",
+    "http": 201,
+    "actual": "success"
+  },
+  {
+    "name": "PR approved",
+    "status": "PASS",
+    "http": 200,
+    "actual": "Submitted"
+  },
+  {
+    "name": "RFQ created",
+    "status": "PASS",
+    "http": 201,
+    "actual": "success"
+  },
+  {
+    "name": "Quotation A",
+    "status": "PASS",
+    "http": 201,
+    "actual": "success"
+  },
+  {
+    "name": "Quotation B",
+    "status": "PASS",
+    "http": 201,
+    "actual": "success"
+  },
+  {
+    "name": "Quotation comparison",
+    "status": "PASS",
+    "http": 200,
+    "actual": "success"
+  },
+  {
+    "name": "Vendor selected",
+    "status": "PASS",
+    "http": 200,
+    "actual": "success"
+  },
+  {
+    "name": "PO created",
+    "status": "PASS",
+    "http": 201,
+    "actual": "PendingApproval"
+  },
+  {
+    "name": "PO approved by next hierarchy level",
+    "status": "PASS",
+    "http": 200,
+    "actual": "success"
+  },
+  {
+    "name": "GRN 1 quantity 40",
+    "status": "PASS",
+    "http": 201,
+    "actual": "Posted"
+  },
+  {
+    "name": "GRN 2 quantity 35",
+    "status": "PASS",
+    "http": 201,
+    "actual": "Posted"
+  },
+  {
+    "name": "GRN 3 quantity 25",
+    "status": "PASS",
+    "http": 201,
+    "actual": "Posted"
+  },
+  {
+    "name": "Receipt after full quantity denied",
+    "status": "PASS",
+    "http": 400,
+    "actual": "GRN can only be created against an approved PO"
+  },
+  {
+    "name": "Partial GRN 40/35/25 state",
+    "status": "PASS",
+    "actual": "PO=Closed; stock=100; FIFO=100; ledger=100"
+  },
+  {
+    "name": "Supplier invoice exact match",
+    "status": "PASS",
+    "http": 201,
+    "actual": "Matched"
+  },
+  {
+    "name": "Duplicate invoice denied",
+    "status": "PASS",
+    "http": 409,
+    "actual": "Duplicate supplier invoice number"
+  },
+  {
+    "name": "Three-way match transaction",
+    "status": "PASS",
+    "http": 200,
+    "actual": "Matched"
+  },
+  {
+    "name": "Finance package complete",
+    "status": "PASS",
+    "http": 200,
+    "actual": "success"
+  },
+  {
+    "name": "SCM external handoff",
+    "status": "PASS",
+    "http": 200,
+    "actual": "Ready for Finance - External Process"
+  },
+  {
+    "name": "Immutable handoff and audit evidence",
+    "status": "PASS",
+    "actual": "handoff=true; audit=1"
+  }
+]

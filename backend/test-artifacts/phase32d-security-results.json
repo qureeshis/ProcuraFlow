@@ -1,0 +1,457 @@
+[
+  {
+    "group": "Authentication",
+    "name": "Valid login",
+    "status": "PASS",
+    "http": 200,
+    "actual": "{\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsInVzZXJuYW1lIjoidDMyZFZhbGlkMTc4NjU3ODc0MzAxMiIsInJvbGUiOiJQdXJjaGFzZU1hbmFnZXIiLCJmdWxsX25hbWUiOiJQaGFzZTMyRCBWYWxpZCIsI"
+  },
+  {
+    "group": "Authentication",
+    "name": "Invalid password",
+    "status": "PASS",
+    "http": 401,
+    "actual": "{\"error\":\"Invalid username or password\"}"
+  },
+  {
+    "group": "Authentication",
+    "name": "Invalid token",
+    "status": "PASS",
+    "http": 401,
+    "actual": "{\"error\":\"Invalid or expired token\"}"
+  },
+  {
+    "group": "Authentication",
+    "name": "Expired token",
+    "status": "PASS",
+    "http": 401,
+    "actual": "{\"error\":\"Invalid or expired token\"}"
+  },
+  {
+    "group": "Authentication",
+    "name": "Malformed token",
+    "status": "PASS",
+    "http": 401,
+    "actual": "{\"error\":\"Invalid or expired token\"}"
+  },
+  {
+    "group": "Authentication",
+    "name": "Inactive user",
+    "status": "PASS",
+    "http": 401,
+    "actual": "{\"error\":\"Account is inactive or no longer available\"}"
+  },
+  {
+    "group": "Authentication",
+    "name": "Disabled employee",
+    "status": "PASS",
+    "http": 403,
+    "actual": "{\"error\":\"This employee has no ProcuraFlow system access\"}"
+  },
+  {
+    "group": "Authentication",
+    "name": "Nonexistent user token",
+    "status": "PASS",
+    "http": 401,
+    "actual": "{\"error\":\"Account is inactive or no longer available\"}"
+  },
+  {
+    "group": "Authentication",
+    "name": "Nonexistent login",
+    "status": "PASS",
+    "http": 401,
+    "actual": "{\"error\":\"Invalid username or password\"}"
+  },
+  {
+    "group": "Authentication",
+    "name": "Password expiry",
+    "status": "PASS",
+    "http": 423,
+    "actual": "{\"error\":\"Password expired. Contact the Supply Chain Manager to restore access.\"}"
+  },
+  {
+    "group": "Finance Exclusion",
+    "name": "Finance Dashboard denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "{\"error\":\"This employee has no ProcuraFlow system access\"}"
+  },
+  {
+    "group": "Finance Exclusion",
+    "name": "Finance PR denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "{\"error\":\"This employee has no ProcuraFlow system access\"}"
+  },
+  {
+    "group": "Finance Exclusion",
+    "name": "Finance PO denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "{\"error\":\"This employee has no ProcuraFlow system access\"}"
+  },
+  {
+    "group": "Finance Exclusion",
+    "name": "Finance GRN denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "{\"error\":\"This employee has no ProcuraFlow system access\"}"
+  },
+  {
+    "group": "Finance Exclusion",
+    "name": "Finance Invoice denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "{\"error\":\"This employee has no ProcuraFlow system access\"}"
+  },
+  {
+    "group": "Finance Exclusion",
+    "name": "Finance Inventory denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "{\"error\":\"This employee has no ProcuraFlow system access\"}"
+  },
+  {
+    "group": "Finance Exclusion",
+    "name": "Finance Reports denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "{\"error\":\"This employee has no ProcuraFlow system access\"}"
+  },
+  {
+    "group": "Finance Exclusion",
+    "name": "Finance Attachments denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "{\"error\":\"This employee has no ProcuraFlow system access\"}"
+  },
+  {
+    "group": "Finance Exclusion",
+    "name": "Finance Audit denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "{\"error\":\"This employee has no ProcuraFlow system access\"}"
+  },
+  {
+    "group": "Finance Exclusion",
+    "name": "Finance Admin denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "{\"error\":\"This employee has no ProcuraFlow system access\"}"
+  },
+  {
+    "group": "Direct Object",
+    "name": "Cross-warehouse GRN direct ID",
+    "status": "PASS",
+    "http": 404,
+    "actual": "{\"error\":\"GRN not found\"}"
+  },
+  {
+    "group": "Direct Object",
+    "name": "Cross-warehouse attachment list",
+    "status": "PASS",
+    "http": 404,
+    "actual": "{\"error\":\"Document not found\"}"
+  },
+  {
+    "group": "Direct Object",
+    "name": "Unauthorized employee object",
+    "status": "PASS",
+    "http": 403,
+    "actual": "{\"error\":\"This employee account is not assigned permission 'task.employees'\"}"
+  },
+  {
+    "group": "Direct Object",
+    "name": "Unauthorized delegation object",
+    "status": "PASS",
+    "http": 403,
+    "actual": "{\"error\":\"Role 'Storekeeper' is not permitted to perform this action\"}"
+  },
+  {
+    "group": "Privilege Escalation",
+    "name": "Change own role",
+    "status": "PASS",
+    "http": 403,
+    "actual": "{\"error\":\"This employee account is not assigned permission 'task.employees'\"}"
+  },
+  {
+    "group": "Privilege Escalation",
+    "name": "Increase own PO limit",
+    "status": "PASS",
+    "http": 403,
+    "actual": "{\"error\":\"This employee account is not assigned permission 'task.employees'\"}"
+  },
+  {
+    "group": "Privilege Escalation",
+    "name": "Add own permission",
+    "status": "PASS",
+    "http": 403,
+    "actual": "{\"error\":\"This employee account is not assigned permission 'task.employees'\"}"
+  },
+  {
+    "group": "Privilege Escalation",
+    "name": "Create self delegation",
+    "status": "PASS",
+    "http": 403,
+    "actual": "{\"error\":\"Role 'Storekeeper' is not permitted to perform this action\"}"
+  },
+  {
+    "group": "Attachments",
+    "name": "Authorized attachment upload",
+    "status": "PASS",
+    "http": 201,
+    "actual": "{\"id\":6,\"original_name\":\"evidence.pdf\",\"url\":\"/uploads/documents/470130b8e96f881958007d54a32c4adc\"}"
+  },
+  {
+    "group": "Attachments",
+    "name": "MIME mismatch denied",
+    "status": "PASS",
+    "http": 400,
+    "actual": "{\"error\":\"File content does not match the declared PDF, JPG, or PNG type\"}"
+  },
+  {
+    "group": "Attachments",
+    "name": "Unsupported extension/type denied",
+    "status": "PASS",
+    "http": 400,
+    "actual": "{\"error\":\"A PDF, JPG, or PNG file is required (maximum 15 MB)\"}"
+  },
+  {
+    "group": "Attachments",
+    "name": "Unsafe filename handled",
+    "status": "PASS",
+    "http": 201,
+    "actual": "{\"id\":7,\"original_name\":\"unsafe.pdf\",\"url\":\"/uploads/documents/ca34e639bc89a4e9f1906c18092fe184\"}"
+  },
+  {
+    "group": "Attachments",
+    "name": "Authorized direct attachment",
+    "status": "PASS",
+    "http": 200,
+    "actual": "%PDF-1.4\n%%EOF"
+  },
+  {
+    "group": "Attachments",
+    "name": "Path traversal document type denied",
+    "status": "PASS",
+    "http": 400,
+    "actual": "{\"error\":\"Invalid document type\"}"
+  },
+  {
+    "group": "Attachments",
+    "name": "Unauthorized replacement absent",
+    "status": "PASS",
+    "http": 404,
+    "actual": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot PUT /api/attachments/file/6</pre>\n</body>\n</html>\n"
+  },
+  {
+    "group": "Attachments",
+    "name": "Unauthorized delete absent",
+    "status": "PASS",
+    "http": 404,
+    "actual": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot DELETE /api/attachments/file/6</pre>\n</body>\n</html>\n"
+  },
+  {
+    "group": "Export Sanitization",
+    "name": "Sanitize =SUM(1,1)",
+    "status": "PASS",
+    "http": null,
+    "actual": "'=SUM(1,1)"
+  },
+  {
+    "group": "Export Sanitization",
+    "name": "Sanitize +CMD",
+    "status": "PASS",
+    "http": null,
+    "actual": "'+CMD"
+  },
+  {
+    "group": "Export Sanitization",
+    "name": "Sanitize -1+2",
+    "status": "PASS",
+    "http": null,
+    "actual": "'-1+2"
+  },
+  {
+    "group": "Export Sanitization",
+    "name": "Sanitize @evil",
+    "status": "PASS",
+    "http": null,
+    "actual": "'@evil"
+  },
+  {
+    "group": "Export Sanitization",
+    "name": "Sanitize <script>alert(1)</",
+    "status": "PASS",
+    "http": null,
+    "actual": "&lt;script&gt;alert(1)&lt;/script&gt;"
+  },
+  {
+    "group": "Export Sanitization",
+    "name": "Sanitize A&B \"quoted\"",
+    "status": "PASS",
+    "http": null,
+    "actual": "A&amp;B &quot;quoted&quot;"
+  },
+  {
+    "group": "Export Authorization",
+    "name": "Unauthorized report API",
+    "status": "PASS",
+    "http": 403,
+    "actual": "{\"error\":\"This employee account is not assigned permission 'report.procurement'\"}"
+  },
+  {
+    "group": "Export Authorization",
+    "name": "Warehouse report tampering scoped",
+    "status": "PASS",
+    "http": 200,
+    "actual": "[{\"item_code\":\"ITM-001\",\"description\":\"Safety Gloves\",\"warehouse_name\":\"Main Warehouse\",\"quantity\":1635},{\"item_code\":\"ITM-001\",\"description\":\"Safety Gloves\",\"warehouse_name\":\"Main"
+  },
+  {
+    "group": "Export Authorization",
+    "name": "Direct nonexistent export endpoint",
+    "status": "PASS",
+    "http": 404,
+    "actual": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /api/reports/export/po-register</pre>\n</body>\n</html>\n"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Finance authenticated API denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "This employee has no ProcuraFlow system access"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Storekeeper delegated handoff denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "This employee account is not assigned permission 'task.invoices'"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Client authority manipulation denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "A current, unrevoked Finance External Handoff delegation is required"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Self delegation denied",
+    "status": "PASS",
+    "http": 409,
+    "actual": "Self-delegation is not permitted"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Finance delegation denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "Finance employees cannot receive ProcuraFlow delegated authority"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Storekeeper delegation denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "Delegate role is not eligible for Finance External Handoff authority"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Re-delegation denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "Role 'PurchaseManager' is not permitted to perform this action"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Future delegation created",
+    "status": "PASS",
+    "http": 201,
+    "actual": "success"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Before-start handoff denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "A current, unrevoked Finance External Handoff delegation is required"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Expired-period delegation created",
+    "status": "PASS",
+    "http": 201,
+    "actual": "success"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "After-expiry handoff denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "A current, unrevoked Finance External Handoff delegation is required"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Wrong-scope delegation created",
+    "status": "PASS",
+    "http": 201,
+    "actual": "success"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Wrong-scope handoff denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "A current, unrevoked Finance External Handoff delegation is required"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Wrong-scope delegation revoked",
+    "status": "PASS",
+    "http": 200,
+    "actual": "REVOKED"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Revocable delegation created",
+    "status": "PASS",
+    "http": 201,
+    "actual": "success"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Delegation revoked immediately",
+    "status": "PASS",
+    "http": 200,
+    "actual": "REVOKED"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Revoked handoff denied",
+    "status": "PASS",
+    "http": 403,
+    "actual": "A current, unrevoked Finance External Handoff delegation is required"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Valid delegation created",
+    "status": "PASS",
+    "http": 201,
+    "actual": "success"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Valid delegated handoff",
+    "status": "PASS",
+    "http": 200,
+    "actual": "Ready for Finance - External Process"
+  },
+  {
+    "group": "Delegation Fresh Regression",
+    "name": "Delegated action identifies actual employee and authority",
+    "status": "PASS",
+    "http": null,
+    "actual": "role=PurchaseManager; delegation=5; employee=15"
+  }
+]

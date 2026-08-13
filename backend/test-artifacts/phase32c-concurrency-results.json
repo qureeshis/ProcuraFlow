@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Duplicate Vendor",
+    "status": "PASS",
+    "actual": "HTTP 201/409; records=1; create_audits=1"
+  },
+  {
+    "name": "Warehouse Transfer 8+7 against 10",
+    "status": "FAIL",
+    "actual": "HTTP 403/403; source=10; destination=0; FIFO=10; documents=0"
+  },
+  {
+    "name": "Issue vs Adjustment",
+    "status": "FAIL",
+    "actual": "create=403; race=201/404; stock=2; FIFO=2"
+  },
+  {
+    "name": "Approval Limit Race Snapshot",
+    "status": "PASS",
+    "actual": "HTTP 200/400; PO=Approved; snapshot={\"approval_value\":9000,\"approval_limit_used\":10000,\"approval_limit_source\":\"EMPLOYEE_MASTER\",\"approval_limit_version\":null,\"approval_limit_effective_at\":\"2026-08-12T23:18:06.410Z\",\"approver_employee_id\":16,\"approver_role\":\"PurchaseOfficer\",\"workflow_level\":\"PurchaseOfficer\"}; history_rows=0"
+  }
+]

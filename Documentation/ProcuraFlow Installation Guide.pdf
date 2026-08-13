@@ -1,0 +1,850 @@
+%PDF-1.3
+%ºß¬à
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 4 0 R
+>>
+endobj
+4 0 obj
+<<
+/Length 7381
+>>
+stream
+0.5670000000000001 w
+0 G
+0.12 0.23 0.54 rg
+0. 841.8899999999999864 595.2755905511811534 -34.0157480314960665 re
+f
+BT
+/F2 8 Tf
+9.1999999999999993 TL
+1. g
+51.0236220472441033 819.212834645669318 Td
+(ProcuraFlow  |  PROFESSIONAL EDITION) Tj
+ET
+BT
+/F2 24 Tf
+27.5999999999999979 TL
+0.118 0.227 0.541 rg
+51.0236220472441033 773.8585039370078675 Td
+(Installation Guide) Tj
+ET
+BT
+/F1 11 Tf
+12.6499999999999986 TL
+0.278 0.333 0.412 rg
+51.0236220472441033 748.346692913385823 Td
+(Technical installation, configuration, verification, startup, backup, and recovery instructions.) Tj
+ET
+0.05 0.58 0.53 RG
+51.0236220472441033 697.3230708661417339 m
+544.2519685039370643 697.3230708661417339 l
+S
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.118 0.161 0.231 rg
+51.0236220472441033 671.8112598425196893 Td
+(ProcuraFlow Professional Edition | Issued 11 August 2026) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.118 0.227 0.541 rg
+51.0236220472441033 647.7167716535432191 Td
+(1. Prerequisites) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 625.0396062992125508 Td
+(1.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 625.0396062992125508 Td
+(Windows 10/11 or Windows Server with PowerShell.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 605.7640157480313974 Td
+(2.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 605.7640157480313974 Td
+(Node.js 18 or later and npm.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 586.4884251968503577 Td
+(3.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 586.4884251968503577 Td
+(Write access to the ProcuraFlow application directory.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 567.212834645669318 Td
+(4.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 567.212834645669318 Td
+(Approved company identity, hostname, JWT secret, and protected backup location for production.) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.118 0.227 0.541 rg
+51.0236220472441033 547.9372440944881646 Td
+(2. Application Layout) Tj
+ET
+BT
+/F1 9.5 Tf
+10.9249999999999989 TL
+0.118 0.161 0.231 rg
+51.0236220472441033 525.2600787401574962 Td
+(Install the application in an approved directory named ProcuraFlow, for example C:\\ProcuraFlow. The primary) Tj
+T* (database is backend\\procuraflow.db. Uploaded evidence is stored in backend\\uploads. Frontend and backend source) Tj
+T* (code are kept in their respective src directories.) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.118 0.227 0.541 rg
+51.0236220472441033 475.6537795275590383 Td
+(3. Install the Backend) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 452.9766141732283131 Td
+(1.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 452.9766141732283131 Td
+(Open PowerShell and change directory to ProcuraFlow\\backend.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 433.7010236220471597 Td
+(2.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 433.7010236220471597 Td
+(Copy .env.example to .env.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 414.4254330708660632 Td
+(3.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 414.4254330708660632 Td
+(Run npm install.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 395.1498425196849098 Td
+(4.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 395.1498425196849098 Td
+(Run npm run build.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 375.8742519685037564 Td
+(5.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 375.8742519685037564 Td
+(Run npm start for the compiled service, or npm run dev for development.) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.118 0.227 0.541 rg
+51.0236220472441033 356.5986614173226599 Td
+(4. Install the Frontend) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 333.9214960629919347 Td
+(1.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 333.9214960629919347 Td
+(Open a second PowerShell window and change directory to) Tj
+T* (ProcuraFlow\\frontend.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 302.4569291338581252 Td
+(2.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 302.4569291338581252 Td
+(Run npm install.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 283.1813385826769718 Td
+(3.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 283.1813385826769718 Td
+(Run npm run build to verify the release.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 263.9057480314958184 Td
+(4.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 263.9057480314958184 Td
+(Run npm run dev for local operation.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 244.630157480314665 Td
+(5.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 244.630157480314665 Td
+(Open http://localhost:5173 in a supported browser.) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.118 0.227 0.541 rg
+51.0236220472441033 225.3545669291335116 Td
+(5. Production Configuration) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 202.6774015748028432 Td
+(1.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 202.6774015748028432 Td
+(Replace JWT_SECRET with a long, random, confidential value.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 183.4018110236216899 Td
+(2.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 183.4018110236216899 Td
+(Set DB_PATH to ./procuraflow.db or an approved absolute path.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 164.1262204724405365 Td
+(3.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 164.1262204724405365 Td
+(Set LICENSED_COMPANY_NAME and LICENSED_HOSTNAMES for the purchased installation.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 144.8506299212593831 Td
+(4.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 144.8506299212593831 Td
+(Set CORS_ORIGINS to the exact permitted frontend origins.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 125.5750393700782297 Td
+(5.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 125.5750393700782297 Td
+(Use HTTPS and restrict operating-system access to the database, uploads, environment file, and backups.) Tj
+ET
+0.8 0.84 0.88 RG
+51.0236220472441033 42.5199212598424126 m
+544.2519685039370643 42.5199212598424126 l
+S
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.278 0.333 0.412 rg
+51.0236220472441033 25.5120472440943331 Td
+(ProcuraFlow | Controlled Documentation) Tj
+ET
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.278 0.333 0.412 rg
+503.6119685039370211 25.5120472440943331 Td
+(Page 1 of 2) Tj
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 6 0 R
+>>
+endobj
+6 0 obj
+<<
+/Length 4880
+>>
+stream
+0.5670000000000001 w
+0.05 0.58 0.53 RG
+0.12 0.23 0.54 rg
+0. 841.8899999999999864 595.2755905511811534 -34.0157480314960665 re
+f
+BT
+/F2 8 Tf
+9.1999999999999993 TL
+1. g
+51.0236220472441033 819.212834645669318 Td
+(ProcuraFlow  |  PROFESSIONAL EDITION) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.118 0.227 0.541 rg
+51.0236220472441033 779.5277952755905062 Td
+(6. Release Verification) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 756.8506299212598378 Td
+(1.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 756.8506299212598378 Td
+(Open http://localhost:4000/api/health and confirm ProcuraFlow) Tj
+T* (Professional Edition.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 725.3860629921259715 Td
+(2.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 725.3860629921259715 Td
+(Run npm run audit:db in backend to verify SQLite integrity, foreign keys, stock, FIFO, totals, and master-code) Tj
+T* (controls.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 693.9214960629921052 Td
+(3.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 693.9214960629921052 Td
+(Run npm run build in both backend and frontend; resolve errors before go-live.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 674.6459055118109518 Td
+(4.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 674.6459055118109518 Td
+(Sign in with a named employee account and confirm role-specific navigation and warehouse scope.) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.118 0.227 0.541 rg
+51.0236220472441033 655.3703149606299121 Td
+(7. Backup and Recovery) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 632.69314960629913 Td
+(1.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 632.69314960629913 Td
+(Use System Settings > Download Database Backup for controlled) Tj
+T* (operational backups.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 601.2285826771653774 Td
+(2.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 601.2285826771653774 Td
+(Keep backups outside the application directory with restricted access and retention controls.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 581.952992125984224 Td
+(3.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 581.952992125984224 Td
+(Use restore staging to validate a candidate SQLite file before replacement.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 562.6774015748030706 Td
+(4.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 562.6774015748030706 Td
+(After restoration, run the database audit and verify balances and source documents.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 543.4018110236220309 Td
+(5.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 543.4018110236220309 Td
+(For a filesystem copy, stop the backend cleanly before copying procuraflow.db.) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.118 0.227 0.541 rg
+51.0236220472441033 524.1262204724409912 Td
+(8. Startup and Shutdown) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 501.449055118110266 Td
+(1.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 501.449055118110266 Td
+(Start the backend first, then the frontend.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 482.1734645669291695 Td
+(2.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 482.1734645669291695 Td
+(Confirm ports 4000 and 5173 are listening and complete the health check.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 462.8978740157480161 Td
+(3.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 462.8978740157480161 Td
+(Stop frontend and backend cleanly so SQLite checkpoints current data.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 443.6222834645668627 Td
+(4.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 443.6222834645668627 Td
+(Never delete .db-wal or .db-shm while the backend is running.) Tj
+ET
+0.8 0.84 0.88 RG
+51.0236220472441033 42.5199212598424126 m
+544.2519685039370643 42.5199212598424126 l
+S
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.278 0.333 0.412 rg
+51.0236220472441033 25.5120472440943331 Td
+(ProcuraFlow | Controlled Documentation) Tj
+ET
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.278 0.333 0.412 rg
+503.6119685039370211 25.5120472440943331 Td
+(Page 2 of 2) Tj
+ET
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R 5 0 R ]
+/Count 2
+>>
+endobj
+7 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+8 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+9 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+10 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+11 0 obj
+<<
+/Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+12 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+13 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+14 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+15 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Roman
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+16 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+17 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Italic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+18 0 obj
+<<
+/Type /Font
+/BaseFont /Times-BoldItalic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+19 0 obj
+<<
+/Type /Font
+/BaseFont /ZapfDingbats
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+20 0 obj
+<<
+/Type /Font
+/BaseFont /Symbol
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 7 0 R
+/F2 8 0 R
+/F3 9 0 R
+/F4 10 0 R
+/F5 11 0 R
+/F6 12 0 R
+/F7 13 0 R
+/F8 14 0 R
+/F9 15 0 R
+/F10 16 0 R
+/F11 17 0 R
+/F12 18 0 R
+/F13 19 0 R
+/F14 20 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+21 0 obj
+<<
+/Producer (jsPDF 4.2.1)
+/CreationDate (D:20260811194826-04'00')
+>>
+endobj
+22 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 23
+0000000000 65535 f 
+0000012654 00000 n 
+0000014479 00000 n 
+0000000015 00000 n 
+0000000152 00000 n 
+0000007585 00000 n 
+0000007722 00000 n 
+0000012717 00000 n 
+0000012842 00000 n 
+0000012972 00000 n 
+0000013105 00000 n 
+0000013243 00000 n 
+0000013367 00000 n 
+0000013496 00000 n 
+0000013628 00000 n 
+0000013764 00000 n 
+0000013892 00000 n 
+0000014019 00000 n 
+0000014148 00000 n 
+0000014281 00000 n 
+0000014383 00000 n 
+0000014729 00000 n 
+0000014815 00000 n 
+trailer
+<<
+/Size 23
+/Root 22 0 R
+/Info 21 0 R
+/ID [ <44F6FA3F1ACBF0FAAE77729A490B0CE7> <44F6FA3F1ACBF0FAAE77729A490B0CE7> ]
+>>
+startxref
+14919
+%%EOF

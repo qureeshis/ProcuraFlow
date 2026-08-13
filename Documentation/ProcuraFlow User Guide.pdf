@@ -1,0 +1,754 @@
+%PDF-1.3
+%ºß¬à
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 4 0 R
+>>
+endobj
+4 0 obj
+<<
+/Length 8083
+>>
+stream
+0.5670000000000001 w
+0 G
+0.12 0.23 0.54 rg
+0. 841.8899999999999864 595.2755905511811534 -34.0157480314960665 re
+f
+BT
+/F2 8 Tf
+9.1999999999999993 TL
+1. g
+51.0236220472441033 819.212834645669318 Td
+(ProcuraFlow  |  PROFESSIONAL EDITION) Tj
+ET
+BT
+/F2 24 Tf
+27.5999999999999979 TL
+0.118 0.227 0.541 rg
+51.0236220472441033 773.8585039370078675 Td
+(User Guide) Tj
+ET
+BT
+/F1 11 Tf
+12.6499999999999986 TL
+0.278 0.333 0.412 rg
+51.0236220472441033 748.346692913385823 Td
+(Practical quick-start guide for daily procurement, warehouse, inventory, and reporting work.) Tj
+ET
+0.05 0.58 0.53 RG
+2.8346456692913389 w
+51.0236220472441033 697.3230708661417339 m
+544.2519685039370643 697.3230708661417339 l
+S
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.278 0.333 0.412 rg
+51.0236220472441033 671.8112598425196893 Td
+(ProcuraFlow Professional Edition) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.278 0.333 0.412 rg
+452.8119685039370097 671.8112598425196893 Td
+(Issued 11 August 2026) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.118 0.227 0.541 rg
+51.0236220472441033 634.9608661417322537 Td
+(Getting Started) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 612.2837007874015853 Td
+(1.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 612.2837007874015853 Td
+(Open http://localhost:5173 and sign in with your individual employee account.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 593.0081102362204319 Td
+(2.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 593.0081102362204319 Td
+(Change a temporary password when prompted; never share credentials.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 573.7325196850392786 Td
+(3.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 573.7325196850392786 Td
+(Review Dashboard KPIs and My Task List at the start of each workday.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 554.4569291338582389 Td
+(4.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 554.4569291338582389 Td
+(Double-click a task to open its source document.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 535.1813385826771992 Td
+(5.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 535.1813385826771992 Td
+(Use only the functions, reports, warehouses, and approval limits assigned to you.) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.118 0.227 0.541 rg
+51.0236220472441033 507.4018110236220309 Td
+(Procurement Quick Start) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 484.7246456692913057 Td
+(1.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 484.7246456692913057 Td
+(Create and submit a Purchase Requisition with required date, justification, and item lines.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 465.4490551181102092 Td
+(2.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 465.4490551181102092 Td
+(Create an RFQ, invite suppliers, enter quotations, and compare landed cost and non-price factors.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 446.1734645669291126 Td
+(3.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 446.1734645669291126 Td
+(Create a PO from one or more approved PRs; verify supplier, quantity, price, tax, terms, currency, and committed) Tj
+T* (delivery date.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 414.7088976377952463 Td
+(4.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 414.7088976377952463 Td
+(Submit for approval. For over-limit orders, generate and attach signed external management evidence.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 395.4333070866140929 Td
+(5.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 395.4333070866140929 Td
+(After receipt, register the supplier invoice and review PO/GRN/invoice differences before Finance submission.) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.118 0.227 0.541 rg
+51.0236220472441033 367.6537795275589815 Td
+(Warehouse Quick Start) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 344.9766141732282563 Td
+(1.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 344.9766141732282563 Td
+(Open Goods Receipt and select an approved or printed PO.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 325.7010236220471597 Td
+(2.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 325.7010236220471597 Td
+(Confirm assigned warehouse and exact destination Bin.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 306.4254330708660063 Td
+(3.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 306.4254330708660063 Td
+(Enter received, accepted, and rejected quantities; record rejection reason, batch, and expiry where required.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 287.149842519684853 Td
+(4.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 287.149842519684853 Td
+(Post the GRN. Only accepted quantity updates stock and partial deliveries keep the PO open.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 267.8742519685036996 Td
+(5.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 267.8742519685036996 Td
+(Use controlled Material Issue, Return, Transfer, Bin Transfer, and Adjustment workflows; never edit a posted) Tj
+T* (movement.) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.118 0.227 0.541 rg
+51.0236220472441033 227.9057480314958184 Td
+(Inventory Control) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 205.22858267716515 Td
+(?) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 205.22858267716515 Td
+(Use Real-Time Stock and FIFO Valuation to review quantity and value by physical location.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 185.9529921259839966 Td
+(?) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 185.9529921259839966 Td
+(Monitor expiry, batches, low stock, ABC classification, and dead stock.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 166.6774015748028432 Td
+(?) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 166.6774015748028432 Td
+(Perform cycle counts, submit variances, and route approval to someone other than the counter.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 147.4018110236216899 Td
+(?) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 147.4018110236216899 Td
+(Trace unexpected balances through Stock Ledger source references.) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.118 0.227 0.541 rg
+51.0236220472441033 119.6222834645665216 Td
+(Reports and Documents) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 96.9451181102359669 Td
+(?) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 96.9451181102359669 Td
+(Select only authorized reports and apply appropriate dates, warehouse, department, and supplier filters.) Tj
+ET
+0.8 0.84 0.88 RG
+51.0236220472441033 42.5199212598424126 m
+544.2519685039370643 42.5199212598424126 l
+S
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.278 0.333 0.412 rg
+51.0236220472441033 25.5120472440943331 Td
+(ProcuraFlow | Controlled Documentation) Tj
+ET
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.278 0.333 0.412 rg
+503.6119685039370211 25.5120472440943331 Td
+(Page 1 of 2) Tj
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 6 0 R
+>>
+endobj
+6 0 obj
+<<
+/Length 2744
+>>
+stream
+2.8346456692913389 w
+0.05 0.58 0.53 RG
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 779.5277952755905062 Td
+(?) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 779.5277952755905062 Td
+(Confirm currency, totals, Generated By, and generation time before distribution.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 760.2522047244094665 Td
+(?) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 760.2522047244094665 Td
+(Export Excel for analysis and PDF/Print for controlled evidence.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 740.9766141732283131 Td
+(?) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 740.9766141732283131 Td
+(Use professional PR, PO, GRN, management approval, and Finance verification documents as the official record.) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0.118 0.227 0.541 rg
+51.0236220472441033 713.1970866141732586 Td
+(Daily Safety Rules) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 690.5199212598424765 Td
+(?) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 690.5199212598424765 Td
+(Confirm document status before action: Draft, Submitted, Pending Approval, Approved, Printed, Posted, Rejected,) Tj
+T* (or Closed.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 659.0553543307086102 Td
+(?) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 659.0553543307086102 Td
+(Do not approve your own work unless the configured Supply Chain Manager exception explicitly applies.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 639.7797637795275705 Td
+(?) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 639.7797637795275705 Td
+(Do not bypass warehouse scope, quantity validation, approval limits, or supporting evidence.) Tj
+ET
+BT
+/F2 9.2 Tf
+10.5799999999999983 TL
+0.051 0.58 0.533 rg
+51.0236220472441033 620.5041732283464171 Td
+(?) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.118 0.161 0.231 rg
+70.8661417322834666 620.5041732283464171 Td
+(Report access problems, incorrect balances, and suspected duplicate records before continuing.) Tj
+ET
+0.8 0.84 0.88 RG
+51.0236220472441033 42.5199212598424126 m
+544.2519685039370643 42.5199212598424126 l
+S
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.278 0.333 0.412 rg
+51.0236220472441033 25.5120472440943331 Td
+(ProcuraFlow | Controlled Documentation) Tj
+ET
+BT
+/F1 8 Tf
+9.1999999999999993 TL
+0.278 0.333 0.412 rg
+503.6119685039370211 25.5120472440943331 Td
+(Page 2 of 2) Tj
+ET
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R 5 0 R ]
+/Count 2
+>>
+endobj
+7 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+8 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+9 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+10 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+11 0 obj
+<<
+/Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+12 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+13 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+14 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+15 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Roman
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+16 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+17 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Italic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+18 0 obj
+<<
+/Type /Font
+/BaseFont /Times-BoldItalic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+19 0 obj
+<<
+/Type /Font
+/BaseFont /ZapfDingbats
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+20 0 obj
+<<
+/Type /Font
+/BaseFont /Symbol
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 7 0 R
+/F2 8 0 R
+/F3 9 0 R
+/F4 10 0 R
+/F5 11 0 R
+/F6 12 0 R
+/F7 13 0 R
+/F8 14 0 R
+/F9 15 0 R
+/F10 16 0 R
+/F11 17 0 R
+/F12 18 0 R
+/F13 19 0 R
+/F14 20 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+21 0 obj
+<<
+/Producer (jsPDF 4.2.1)
+/CreationDate (D:20260811194716-04'00')
+>>
+endobj
+22 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 23
+0000000000 65535 f 
+0000011220 00000 n 
+0000013045 00000 n 
+0000000015 00000 n 
+0000000152 00000 n 
+0000008287 00000 n 
+0000008424 00000 n 
+0000011283 00000 n 
+0000011408 00000 n 
+0000011538 00000 n 
+0000011671 00000 n 
+0000011809 00000 n 
+0000011933 00000 n 
+0000012062 00000 n 
+0000012194 00000 n 
+0000012330 00000 n 
+0000012458 00000 n 
+0000012585 00000 n 
+0000012714 00000 n 
+0000012847 00000 n 
+0000012949 00000 n 
+0000013295 00000 n 
+0000013381 00000 n 
+trailer
+<<
+/Size 23
+/Root 22 0 R
+/Info 21 0 R
+/ID [ <A28A0739C3139ED42B391B4A8E65B263> <A28A0739C3139ED42B391B4A8E65B263> ]
+>>
+startxref
+13485
+%%EOF

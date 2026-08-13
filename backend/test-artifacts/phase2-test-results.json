@@ -1,0 +1,182 @@
+[
+  {
+    "suite": "WAREHOUSE_ACCESS",
+    "name": "Scope stock-balance",
+    "api": "/api/reports/stock-balance",
+    "expected": "No Yard Storage data",
+    "actual": "200; 71 rows",
+    "status": "PASS",
+    "evidence": "Tampered warehouse_id query ignored; server assignment applied"
+  },
+  {
+    "suite": "WAREHOUSE_ACCESS",
+    "name": "Scope fifo-valuation",
+    "api": "/api/reports/fifo-valuation",
+    "expected": "No Yard Storage data",
+    "actual": "200; 36 rows",
+    "status": "PASS",
+    "evidence": "Tampered warehouse_id query ignored; server assignment applied"
+  },
+  {
+    "suite": "WAREHOUSE_ACCESS",
+    "name": "Scope grn-register",
+    "api": "/api/reports/grn-register",
+    "expected": "No Yard Storage data",
+    "actual": "200; 6 rows",
+    "status": "PASS",
+    "evidence": "Tampered warehouse_id query ignored; server assignment applied"
+  },
+  {
+    "suite": "WAREHOUSE_ACCESS",
+    "name": "Scope daily-receiving",
+    "api": "/api/reports/daily-receiving",
+    "expected": "No Yard Storage data",
+    "actual": "200; 6 rows",
+    "status": "PASS",
+    "evidence": "Tampered warehouse_id query ignored; server assignment applied"
+  },
+  {
+    "suite": "WAREHOUSE_ACCESS",
+    "name": "Scope daily-issues",
+    "api": "/api/reports/daily-issues",
+    "expected": "No Yard Storage data",
+    "actual": "200; 9 rows",
+    "status": "PASS",
+    "evidence": "Tampered warehouse_id query ignored; server assignment applied"
+  },
+  {
+    "suite": "WAREHOUSE_ACCESS",
+    "name": "Scope returns-report",
+    "api": "/api/reports/returns-report",
+    "expected": "No Yard Storage data",
+    "actual": "200; 0 rows",
+    "status": "PASS",
+    "evidence": "Tampered warehouse_id query ignored; server assignment applied"
+  },
+  {
+    "suite": "WAREHOUSE_ACCESS",
+    "name": "Scope transfers-report",
+    "api": "/api/reports/transfers-report",
+    "expected": "No Yard Storage data",
+    "actual": "200; 0 rows",
+    "status": "PASS",
+    "evidence": "Tampered warehouse_id query ignored; server assignment applied"
+  },
+  {
+    "suite": "WAREHOUSE_ACCESS",
+    "name": "Scope adjustments-report",
+    "api": "/api/reports/adjustments-report",
+    "expected": "No Yard Storage data",
+    "actual": "200; 0 rows",
+    "status": "PASS",
+    "evidence": "Tampered warehouse_id query ignored; server assignment applied"
+  },
+  {
+    "suite": "WAREHOUSE_ACCESS",
+    "name": "Scope stock-ledger",
+    "api": "/api/reports/stock-ledger",
+    "expected": "No Yard Storage data",
+    "actual": "200; 51 rows",
+    "status": "PASS",
+    "evidence": "Tampered warehouse_id query ignored; server assignment applied"
+  },
+  {
+    "suite": "WAREHOUSE_ACCESS",
+    "name": "Scope batch-report",
+    "api": "/api/reports/batch-report",
+    "expected": "No Yard Storage data",
+    "actual": "200; 73 rows",
+    "status": "PASS",
+    "evidence": "Tampered warehouse_id query ignored; server assignment applied"
+  },
+  {
+    "suite": "WAREHOUSE_ACCESS",
+    "name": "Scope cycle-count-accuracy",
+    "api": "/api/reports/cycle-count-accuracy",
+    "expected": "No Yard Storage data",
+    "actual": "200; 0 rows",
+    "status": "PASS",
+    "evidence": "Tampered warehouse_id query ignored; server assignment applied"
+  },
+  {
+    "suite": "WAREHOUSE_ACCESS",
+    "name": "Scope outstanding-returnables",
+    "api": "/api/reports/outstanding-returnables",
+    "expected": "No Yard Storage data",
+    "actual": "200; 0 rows",
+    "status": "PASS",
+    "evidence": "Tampered warehouse_id query ignored; server assignment applied"
+  },
+  {
+    "suite": "WAREHOUSE_ACCESS",
+    "name": "Scope tool-condition",
+    "api": "/api/reports/tool-condition",
+    "expected": "No Yard Storage data",
+    "actual": "200; 0 rows",
+    "status": "PASS",
+    "evidence": "Tampered warehouse_id query ignored; server assignment applied"
+  },
+  {
+    "suite": "WAREHOUSE_ACCESS",
+    "name": "Scope consumption-by-employee",
+    "api": "/api/reports/consumption-by-employee",
+    "expected": "No Yard Storage data",
+    "actual": "200; 8 rows",
+    "status": "PASS",
+    "evidence": "Tampered warehouse_id query ignored; server assignment applied"
+  },
+  {
+    "suite": "WAREHOUSE_ACCESS",
+    "name": "Scope consumption-by-department",
+    "api": "/api/reports/consumption-by-department",
+    "expected": "No Yard Storage data",
+    "actual": "200; 2 rows",
+    "status": "PASS",
+    "evidence": "Tampered warehouse_id query ignored; server assignment applied"
+  },
+  {
+    "suite": "WAREHOUSE_ACCESS",
+    "name": "Direct denied GRN",
+    "api": "/api/warehouse/grns/7",
+    "expected": "404/403",
+    "actual": "404",
+    "status": "PASS",
+    "evidence": "Direct ID outside assigned warehouse rejected"
+  },
+  {
+    "suite": "WAREHOUSE_ACCESS",
+    "name": "Denied attachment list",
+    "api": "/api/attachments/GRN/7",
+    "expected": "404/403",
+    "actual": "404",
+    "status": "PASS",
+    "evidence": "Direct ID outside assigned warehouse rejected"
+  },
+  {
+    "suite": "CONCURRENCY",
+    "name": "Concurrent GRN over-receipt",
+    "api": "POST /api/warehouse/grns",
+    "expected": "Only one succeeds; total <=10",
+    "actual": "201/400; accepted=8",
+    "status": "PASS",
+    "evidence": "Immediate transaction rechecks outstanding quantity"
+  },
+  {
+    "suite": "CONCURRENCY",
+    "name": "Concurrent document numbering",
+    "api": "nextDocNumber(PR)",
+    "expected": "12 unique numbers",
+    "actual": "12 returned; 12 unique",
+    "status": "PASS",
+    "evidence": "Immediate counter transaction"
+  },
+  {
+    "suite": "WORKFLOW_REGRESSION",
+    "name": "Isolated database integrity",
+    "api": "SQLite",
+    "expected": "ok / 0 FK",
+    "actual": "ok / 0",
+    "status": "PASS",
+    "evidence": "Post-test isolated DB validation"
+  }
+]

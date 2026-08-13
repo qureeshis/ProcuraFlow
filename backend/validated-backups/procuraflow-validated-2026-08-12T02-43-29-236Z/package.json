@@ -1,0 +1,45 @@
+{
+  "name": "procuraflow-backend",
+  "version": "1.0.0",
+  "description": "ProcuraFlow Professional Edition - Backend API (Node/Express/TypeScript/SQLite)",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc && node -e \"require('fs').copyFileSync('src/db/schema.sql', 'dist/db/schema.sql')\"",
+    "start": "node dist/server.js",
+    "seed": "ts-node src/db/seed.ts"
+    ,"audit:db": "ts-node src/db/audit.ts"
+    ,"repair:inventory": "ts-node src/db/repairInventory.ts"
+    ,"verify:phase2": "node scripts/phase2-verify.cjs"
+    ,"verify:backup-restore": "node scripts/backup-restore-verify.cjs"
+    ,"verify:reports": "node scripts/report-accuracy-verify.cjs"
+    ,"docs:phase2": "node scripts/phase2-docs.cjs"
+    ,"verify:phase3-controls": "node scripts/phase3-controls-verify.cjs"
+    ,"verify:phase3-reports": "node scripts/phase3-report-verify.cjs"
+    ,"docs:phase3": "node scripts/phase3-docs.cjs"
+  },
+  "dependencies": {
+    "@types/multer": "^2.2.0",
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.2.0",
+    "uuid": "^14.0.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.14.10",
+    "@types/uuid": "^9.0.8",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.3"
+  }
+}

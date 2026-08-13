@@ -1,0 +1,10 @@
+# Purchase Officer Approval Tests
+
+| test_suite | test_name | expected_result | actual_result | status | evidence | is_current | superseded_by | executed_at |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| PO_APPROVAL_LIMIT | Below limit 8000 | 200 | HTTP 200: success | PASS | Isolated API database C:\Users\quree\Downloads\pmms-professional-edition\ProcuraFlow\backend\test-artifacts\ProcuraFlow_PHASE31_TEST.db | 1 |  | 2026-08-12 22:06:00 |
+| PO_APPROVAL_LIMIT | At limit 10000 | 200 | HTTP 200: success | PASS | Isolated API database C:\Users\quree\Downloads\pmms-professional-edition\ProcuraFlow\backend\test-artifacts\ProcuraFlow_PHASE31_TEST.db | 1 |  | 2026-08-12 22:06:00 |
+| PO_APPROVAL_LIMIT | Above limit 10001 | 403 | HTTP 403: Approval is currently assigned to the nearest available Purchase Manager | PASS | Isolated API database C:\Users\quree\Downloads\pmms-professional-edition\ProcuraFlow\backend\test-artifacts\ProcuraFlow_PHASE31_TEST.db | 1 |  | 2026-08-12 22:06:00 |
+| PO_APPROVAL_LIMIT | Client limit tampering ignored | 403 | HTTP 403: Approval is currently assigned to the nearest available Purchase Manager | PASS | Isolated API database C:\Users\quree\Downloads\pmms-professional-edition\ProcuraFlow\backend\test-artifacts\ProcuraFlow_PHASE31_TEST.db | 1 |  | 2026-08-12 22:06:00 |
+| PO_APPROVAL_LIMIT | Replay approved PO | 409 | HTTP 409: PO is Approved and can no longer be amended or approved | PASS | Isolated API database C:\Users\quree\Downloads\pmms-professional-edition\ProcuraFlow\backend\test-artifacts\ProcuraFlow_PHASE31_TEST.db | 1 |  | 2026-08-12 22:06:00 |
+| PO_APPROVAL_LIMIT | Own limit change denied | 403 | HTTP 403: This employee account is not assigned permission 'task.employees' | PASS | Isolated API database C:\Users\quree\Downloads\pmms-professional-edition\ProcuraFlow\backend\test-artifacts\ProcuraFlow_PHASE31_TEST.db | 1 |  | 2026-08-12 22:06:00 |

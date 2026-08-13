@@ -1,0 +1,21 @@
+import React from 'react';
+import { getStoredCurrency } from '../utils/currency';
+import { CompanyContact, CompanyLogo, GeneratedByFooter } from './Branding';
+
+const money = (value: unknown) => Number(value || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+export default function ManagementApprovalRequest({ doc }: { doc: any }) {
+  const currency = doc.company?.currency || getStoredCurrency();
+  return <article id="management-approval-document" className="controlled-print-document bg-white text-slate-900 border border-slate-300 rounded-lg p-7">
+    <header className="flex justify-between gap-6 border-b-2 border-rose-700 pb-5">
+      <div className="flex gap-4"><CompanyLogo company={doc.company} size="document"/><div><h1 className="text-xl font-bold">{doc.company?.name || 'Company Name'}</h1><div className="text-xs whitespace-pre-line text-slate-600">{doc.company?.address || 'Company address not configured'}</div><CompanyContact company={doc.company}/></div></div>
+      <div className="text-right"><div className="text-xl font-bold text-rose-800">MANAGEMENT APPROVAL REQUEST</div><div className="mt-2 text-sm font-bold text-rose-800">Ref: {doc.po.management_approval_request_number}</div><div className="font-semibold">PO {doc.po.po_number}</div><div className="text-xs">Date: {new Date(doc.po.created_at).toLocaleDateString()}</div></div>
+    </header>
+    <section className="grid grid-cols-2 gap-5 text-xs my-5"><div><div className="font-bold uppercase text-slate-500">Vendor</div><div className="text-sm font-bold mt-1">{doc.po.supplier_name}</div><div>{doc.po.supplier_address || '—'}</div><div>{doc.po.supplier_contact_person || ''}</div><div>{doc.po.supplier_email || ''} {doc.po.supplier_phone || ''}</div></div><div className="grid grid-cols-[120px_1fr] gap-y-1"><span>Payment Terms</span><strong>{doc.po.supplier_payment_terms || 'Not specified'}</strong><span>Committed Delivery</span><strong>{doc.po.committed_delivery_date || 'Not specified'}</strong><span>Currency</span><strong>{currency}</strong><span>Prepared By</span><strong>{doc.po.created_by_name || '—'}</strong><span>Total PO Value</span><strong className="text-rose-800">{currency} {money(doc.po.total_amount)}</strong></div></section>
+    <table className="w-full text-xs border-collapse"><thead><tr className="bg-slate-800 text-white"><th className="border p-2">#</th><th className="border p-2 text-left">Item Code & Description</th><th className="border p-2 text-right">Qty / UOM</th><th className="border p-2 text-right">Unit Price</th><th className="border p-2 text-right">Tax</th><th className="border p-2 text-right">Total</th></tr></thead><tbody>{doc.items.map((item:any,index:number)=><tr key={item.id}><td className="border p-2 text-center">{index+1}</td><td className="border p-2"><strong>{item.item_code}</strong> — {item.description}</td><td className="border p-2 text-right">{item.quantity} {item.purchase_uom || item.uom || ''}</td><td className="border p-2 text-right">{money(item.price)} / {item.purchase_uom || item.uom || 'unit'}</td><td className="border p-2 text-right">{Number(item.tax||0).toFixed(2)}%</td><td className="border p-2 text-right">{money(Number(item.quantity)*Number(item.price)*(1+Number(item.tax||0)/100))}</td></tr>)}</tbody></table>
+    <div className="flex justify-end mt-4"><div className="border-y-2 border-slate-800 bg-slate-50 px-4 py-2 text-lg font-bold">Total: {currency} {money(doc.po.total_amount)}</div></div>
+    <section className="mt-14 grid grid-cols-2 gap-12 text-xs"><div className="border-t border-slate-600 pt-2">Higher Management Name / Title<div className="mt-1 text-[9px] text-slate-500">Pending external action</div></div><div className="border-t border-slate-600 pt-2">Signature and Date<div className="mt-1 text-[9px] text-slate-500">Pending external action</div></div></section>
+    <section className="mt-10 grid grid-cols-2 gap-12 text-xs"><div className="border-t border-slate-600 pt-2">Management Decision / Signed Reference</div><div className="border-t border-slate-600 pt-2">Comments / Conditions</div></section>
+    <GeneratedByFooter note="After signature, upload this document to the PO as External Management Approval evidence."/>
+  </article>;
+}

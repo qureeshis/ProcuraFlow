@@ -1,0 +1,26 @@
+# Warehouse Access Verification Report
+
+Audit evidence date: 11 August 2026
+
+Passed: **17 / 17**.
+
+| test_name | report_api | test_user | assigned_warehouse | requested_warehouse | expected_result | actual_result | status | evidence | executed_at |
+|---|---|---|---|---|---|---|---|---|---|
+| Scope stock-balance | /api/reports/stock-balance | musa.ali | Central Warehouse | Yard Storage | No Yard Storage data | 200; 71 rows | PASS | Tampered warehouse_id query ignored; server assignment applied | 2026-08-12 02:05:09 |
+| Scope fifo-valuation | /api/reports/fifo-valuation | musa.ali | Central Warehouse | Yard Storage | No Yard Storage data | 200; 36 rows | PASS | Tampered warehouse_id query ignored; server assignment applied | 2026-08-12 02:05:09 |
+| Scope grn-register | /api/reports/grn-register | musa.ali | Central Warehouse | Yard Storage | No Yard Storage data | 200; 6 rows | PASS | Tampered warehouse_id query ignored; server assignment applied | 2026-08-12 02:05:09 |
+| Scope daily-receiving | /api/reports/daily-receiving | musa.ali | Central Warehouse | Yard Storage | No Yard Storage data | 200; 6 rows | PASS | Tampered warehouse_id query ignored; server assignment applied | 2026-08-12 02:05:09 |
+| Scope daily-issues | /api/reports/daily-issues | musa.ali | Central Warehouse | Yard Storage | No Yard Storage data | 200; 5 rows | PASS | Tampered warehouse_id query ignored; server assignment applied | 2026-08-12 02:05:09 |
+| Scope returns-report | /api/reports/returns-report | musa.ali | Central Warehouse | Yard Storage | No Yard Storage data | 200; 0 rows | PASS | Tampered warehouse_id query ignored; server assignment applied | 2026-08-12 02:05:09 |
+| Scope transfers-report | /api/reports/transfers-report | musa.ali | Central Warehouse | Yard Storage | No Yard Storage data | 200; 0 rows | PASS | Tampered warehouse_id query ignored; server assignment applied | 2026-08-12 02:05:09 |
+| Scope adjustments-report | /api/reports/adjustments-report | musa.ali | Central Warehouse | Yard Storage | No Yard Storage data | 200; 0 rows | PASS | Tampered warehouse_id query ignored; server assignment applied | 2026-08-12 02:05:09 |
+| Scope stock-ledger | /api/reports/stock-ledger | musa.ali | Central Warehouse | Yard Storage | No Yard Storage data | 200; 46 rows | PASS | Tampered warehouse_id query ignored; server assignment applied | 2026-08-12 02:05:09 |
+| Scope batch-report | /api/reports/batch-report | musa.ali | Central Warehouse | Yard Storage | No Yard Storage data | 200; 73 rows | PASS | Tampered warehouse_id query ignored; server assignment applied | 2026-08-12 02:05:09 |
+| Scope cycle-count-accuracy | /api/reports/cycle-count-accuracy | musa.ali | Central Warehouse | Yard Storage | No Yard Storage data | 200; 0 rows | PASS | Tampered warehouse_id query ignored; server assignment applied | 2026-08-12 02:05:09 |
+| Scope outstanding-returnables | /api/reports/outstanding-returnables | musa.ali | Central Warehouse | Yard Storage | No Yard Storage data | 200; 0 rows | PASS | Tampered warehouse_id query ignored; server assignment applied | 2026-08-12 02:05:09 |
+| Scope tool-condition | /api/reports/tool-condition | musa.ali | Central Warehouse | Yard Storage | No Yard Storage data | 200; 0 rows | PASS | Tampered warehouse_id query ignored; server assignment applied | 2026-08-12 02:05:09 |
+| Scope consumption-by-employee | /api/reports/consumption-by-employee | musa.ali | Central Warehouse | Yard Storage | No Yard Storage data | 200; 4 rows | PASS | Tampered warehouse_id query ignored; server assignment applied | 2026-08-12 02:05:09 |
+| Scope consumption-by-department | /api/reports/consumption-by-department | musa.ali | Central Warehouse | Yard Storage | No Yard Storage data | 200; 2 rows | PASS | Tampered warehouse_id query ignored; server assignment applied | 2026-08-12 02:05:09 |
+| Direct denied GRN | /api/warehouse/grns/7 | musa.ali | Central Warehouse | Yard Storage | 404/403 | 404 | PASS | Direct ID outside assigned warehouse rejected | 2026-08-12 02:05:09 |
+| Denied attachment list | /api/attachments/GRN/7 | musa.ali | Central Warehouse | Yard Storage | 404/403 | 404 | PASS | Direct ID outside assigned warehouse rejected | 2026-08-12 02:05:09 |
+

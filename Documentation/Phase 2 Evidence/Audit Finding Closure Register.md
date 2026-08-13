@@ -1,0 +1,18 @@
+# Audit Finding Closure Register
+
+Audit evidence date: 11 August 2026
+
+| finding_id | severity | module | issue | status | resolution_date | residual_risk | management_decision |
+|---|---|---|---|---|---|---|---|
+| PF-2026-001 | HIGH | Attachments | Attachment parent-document authorization gap | RESOLVED | 2026-08-12 |  |  |
+| PF-2026-002 | HIGH | Warehouse | Direct GRN detail warehouse-scope gap | RESOLVED | 2026-08-12 |  |  |
+| PF-2026-003 | HIGH | Reports | Spreadsheet formula/HTML injection | RESOLVED | 2026-08-12 |  |  |
+| PF-2026-004 | HIGH | Inventory | Legacy permanent-ledger reconciliation warnings | IN PROGRESS |  |  |  |
+| PF-2026-005 | HIGH | Access Control | Non-management segregation-of-duties conflicts | IN PROGRESS |  |  |  |
+| PF-2026-006 | HIGH | Reports | Warehouse report APIs were not uniformly assignment-scoped | RESOLVED | 2026-08-12 |  |  |
+| PF-2026-007 | MEDIUM | Testing | Full PR-to-Finance workflow regression suite incomplete | OPEN |  | Overall audit readiness remains WARNING |  |
+| PF-2026-008 | MEDIUM | Testing | Remaining mandatory concurrency scenarios incomplete | OPEN |  | Overall audit readiness remains WARNING |  |
+| PF-2026-009 | MEDIUM | Reports | Six requested report families remain independently unverified | OPEN |  | Overall audit readiness remains WARNING |  |
+| PF-2026-010 | MEDIUM | Document Control | Approved-document revision enforcement incomplete | OPEN |  | Overall audit readiness remains WARNING |  |
+| PF-2026-011 | MEDIUM | Period Control | Accounting-period posting enforcement incomplete | OPEN |  | Overall audit readiness remains WARNING |  |
+

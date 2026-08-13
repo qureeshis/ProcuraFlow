@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Inventory Balance",
+    "endpoint": "stock-balance",
+    "source_total": 846315,
+    "api_total": 846315,
+    "export_basis": "Export uses the identical API row set after selected UI filters",
+    "status": "PASS"
+  },
+  {
+    "name": "Inventory Valuation",
+    "endpoint": "fifo-valuation",
+    "source_total": 766493.31,
+    "api_total": 766493.32,
+    "export_basis": "Export uses the identical API row set after selected UI filters",
+    "status": "PASS"
+  },
+  {
+    "name": "Stock Ledger",
+    "endpoint": "stock-ledger",
+    "source_total": 410282.84,
+    "api_total": 410282.83,
+    "export_basis": "Export uses the identical API row set after selected UI filters",
+    "status": "PASS"
+  },
+  {
+    "name": "Purchase Register",
+    "endpoint": "po-register",
+    "source_total": 316990.99,
+    "api_total": 316991,
+    "export_basis": "Export uses the identical API row set after selected UI filters",
+    "status": "PASS"
+  },
+  {
+    "name": "Open Purchase Orders",
+    "endpoint": "open-po",
+    "source_total": 316245.17,
+    "api_total": 316245.18,
+    "export_basis": "Export uses the identical API row set after selected UI filters",
+    "status": "PASS"
+  },
+  {
+    "name": "GRN Register",
+    "endpoint": "grn-register",
+    "source_total": 43231,
+    "api_total": 43231,
+    "export_basis": "Export uses the identical API row set after selected UI filters",
+    "status": "PASS"
+  },
+  {
+    "name": "Material Issues",
+    "endpoint": "daily-issues",
+    "source_total": 48.44,
+    "api_total": 48.44,
+    "export_basis": "Export uses the identical API row set after selected UI filters",
+    "status": "PASS"
+  },
+  {
+    "name": "Material Returns",
+    "endpoint": "returns-report",
+    "source_total": 0,
+    "api_total": 0,
+    "export_basis": "Export uses the identical API row set after selected UI filters",
+    "status": "PASS"
+  },
+  {
+    "name": "Warehouse Transfers",
+    "endpoint": "transfers-report",
+    "source_total": 0,
+    "api_total": 0,
+    "export_basis": "Export uses the identical API row set after selected UI filters",
+    "status": "PASS"
+  },
+  {
+    "name": "Employee Consumption",
+    "endpoint": "consumption-by-employee",
+    "source_total": 48.44,
+    "api_total": 48.44,
+    "export_basis": "Export uses the identical API row set after selected UI filters",
+    "status": "PASS"
+  },
+  {
+    "name": "Department Consumption",
+    "endpoint": "consumption-by-department",
+    "source_total": 48.44,
+    "api_total": 48.44,
+    "export_basis": "Export uses the identical API row set after selected UI filters",
+    "status": "PASS"
+  },
+  {
+    "name": "Vendor Purchases",
+    "endpoint": "supplier-purchase-analysis",
+    "source_total": 316990.99,
+    "api_total": 316990.99,
+    "export_basis": "Export uses the identical API row set after selected UI filters",
+    "status": "PASS"
+  },
+  {
+    "name": "Bin Stock",
+    "endpoint": "No dedicated independently tested report endpoint",
+    "source_total": null,
+    "api_total": null,
+    "export_basis": "Not verified in this phase",
+    "status": "NOT TESTED"
+  },
+  {
+    "name": "Invoice Register",
+    "endpoint": "No dedicated independently tested report endpoint",
+    "source_total": null,
+    "api_total": null,
+    "export_basis": "Not verified in this phase",
+    "status": "NOT TESTED"
+  },
+  {
+    "name": "PO vs GRN",
+    "endpoint": "No dedicated independently tested report endpoint",
+    "source_total": null,
+    "api_total": null,
+    "export_basis": "Not verified in this phase",
+    "status": "NOT TESTED"
+  },
+  {
+    "name": "PO vs Invoice",
+    "endpoint": "No dedicated independently tested report endpoint",
+    "source_total": null,
+    "api_total": null,
+    "export_basis": "Not verified in this phase",
+    "status": "NOT TESTED"
+  },
+  {
+    "name": "GRN vs Invoice",
+    "endpoint": "No dedicated independently tested report endpoint",
+    "source_total": null,
+    "api_total": null,
+    "export_basis": "Not verified in this phase",
+    "status": "NOT TESTED"
+  },
+  {
+    "name": "Three-Way Match",
+    "endpoint": "No dedicated independently tested report endpoint",
+    "source_total": null,
+    "api_total": null,
+    "export_basis": "Not verified in this phase",
+    "status": "NOT TESTED"
+  }
+]

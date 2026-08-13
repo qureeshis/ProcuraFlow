@@ -1,0 +1,30 @@
+[
+  {
+    "suite": "CONCURRENCY_PHASE32",
+    "name": "Final-stock Material Issue 8 + 7 against 10",
+    "expected": "One succeeds; stock nonnegative; FIFO equals stock",
+    "actual": "HTTP 201/400; stock=2; FIFO=2",
+    "status": "PASS"
+  },
+  {
+    "suite": "CONCURRENCY_PHASE32",
+    "name": "PO Approve + Approve",
+    "expected": "One 200, one conflict, one approval",
+    "actual": "HTTP 409/200; approvals=1",
+    "status": "PASS"
+  },
+  {
+    "suite": "CONCURRENCY_PHASE32",
+    "name": "PO Approve + Reject",
+    "expected": "One transition, one final state",
+    "actual": "HTTP 200/403; final=Approved; decisions=1",
+    "status": "PASS"
+  },
+  {
+    "suite": "CONCURRENCY_PHASE32",
+    "name": "Duplicate Item master",
+    "expected": "One active record",
+    "actual": "HTTP 201/409; records=1",
+    "status": "PASS"
+  }
+]
