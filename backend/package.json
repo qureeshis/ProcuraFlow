@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "ProcuraFlow Professional Edition - Backend API (Node/Express/TypeScript/SQLite)",
   "main": "dist/server.js",
+  "engines": {
+    "node": ">=20 <21"
+  },
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "build": "tsc && node -e \"require('fs').copyFileSync('src/db/schema.sql', 'dist/db/schema.sql')\"",
