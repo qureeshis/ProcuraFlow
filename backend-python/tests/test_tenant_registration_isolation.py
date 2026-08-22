@@ -13,6 +13,7 @@ def setup_tenants(tmp_path,monkeypatch):
     monkeypatch.setattr(database,'DB_PATH',source)
     monkeypatch.setattr(tenancy,'TENANT_ROOT',tmp_path/'tenants')
     monkeypatch.setattr(tenancy,'REGISTRY_PATH',tmp_path/'tenants'/'tenant-registry.db')
+    monkeypatch.delenv('ALLOW_MULTIPLE_COMPANIES',raising=False)
     return TestClient(app)
 
 
@@ -22,20 +23,35 @@ def registration(key,name):
 
 def test_company_registration_login_and_database_isolation(tmp_path,monkeypatch):
     client=setup_tenants(tmp_path,monkeypatch)
-    for key,name in [('alpha-precast','Alpha Precast'),('beta-precast','Beta Precast')]:
+    for key,name in [('alpha-precast','Alpha Precast')]:
         created=client.post('/api/auth/register-company',json=registration(key,name))
         assert created.status_code==201,created.text
+        assert client.get('/api/auth/registration-status').json()['registration_enabled'] is False
         signed_in=client.post('/api/auth/login',json={'company_key':key,'username':'admin','password':'Secure-Tenant-Password-123!'},headers={'X-Company-Key':key})
         assert signed_in.status_code==200,signed_in.text
         assert signed_in.json()['user']['tenant_key']==key
         token=signed_in.json()['token']
         me=client.get('/api/auth/me',headers={'Authorization':f'Bearer {token}','X-Company-Key':key})
         assert me.status_code==200 and me.json()['tenant_key']==key
-        mismatch=client.get('/api/auth/me',headers={'Authorization':f'Bearer {token}','X-Company-Key':'beta-precast'if key=='alpha-precast'else'alpha-precast'})
+        mismatch=client.get('/api/auth/me',headers={'Authorization':f'Bearer {token}','X-Company-Key':'beta-precast'})
         assert mismatch.status_code==401
-    alpha=tenancy.tenant_record('alpha-precast');beta=tenancy.tenant_record('beta-precast')
+    blocked=client.post('/api/auth/register-company',json=registration('beta-precast','Beta Precast'))
+    assert blocked.status_code==403
+    alpha=tenancy.tenant_record('alpha-precast')
     with sqlite3.connect(alpha['database_path'])as connection:
         assert connection.execute('SELECT name FROM company').fetchone()[0]=='Alpha Precast'
+        connection.execute("INSERT INTO suppliers(supplier_code,name)VALUES('SUP-SECRET','Alpha Secret Supplier')");connection.commit()
+
+
+def test_multiple_company_registration_requires_explicit_opt_in(tmp_path,monkeypatch):
+    client=setup_tenants(tmp_path,monkeypatch)
+    monkeypatch.setenv('ALLOW_MULTIPLE_COMPANIES','true')
+    for key,name in [('alpha-precast','Alpha Precast'),('beta-precast','Beta Precast')]:
+        created=client.post('/api/auth/register-company',json=registration(key,name))
+        assert created.status_code==201,created.text
+    assert client.get('/api/auth/registration-status').json()['registration_enabled'] is True
+    alpha=tenancy.tenant_record('alpha-precast');beta=tenancy.tenant_record('beta-precast')
+    with sqlite3.connect(alpha['database_path'])as connection:
         connection.execute("INSERT INTO suppliers(supplier_code,name)VALUES('SUP-SECRET','Alpha Secret Supplier')");connection.commit()
     with sqlite3.connect(beta['database_path'])as connection:
         assert connection.execute('SELECT name FROM company').fetchone()[0]=='Beta Precast'

@@ -1,6 +1,7 @@
 import os
 import re
 import sqlite3
+import stat
 from contextlib import contextmanager
 from pathlib import Path
 
@@ -10,6 +11,7 @@ TENANT_ROOT = Path(os.getenv('TENANT_DATA_DIR',str(database.BACKEND_ROOT/'tenant
 REGISTRY_PATH = TENANT_ROOT / 'tenant-registry.db'
 TENANT_KEY = re.compile(r'^[a-z0-9][a-z0-9-]{2,47}$')
 REFERENCE_TABLES = ('countries','cities','currencies','item_categories','item_subcategories','settings','role_shift_requirements')
+TRUTHY = {'1','true','yes','on'}
 
 
 def normalize_tenant_key(value: str) -> str:
@@ -25,6 +27,27 @@ def ensure_registry():
           tenant_key TEXT PRIMARY KEY,company_name TEXT NOT NULL COLLATE NOCASE UNIQUE,database_path TEXT NOT NULL UNIQUE,
           status TEXT NOT NULL DEFAULT 'Active',created_at TEXT NOT NULL DEFAULT(datetime('now')))''')
         c.execute("INSERT OR IGNORE INTO tenants(tenant_key,company_name,database_path)VALUES('default','Existing ProcuraFlow Company',?)",(str(database.DB_PATH),))
+
+
+def allow_multiple_companies() -> bool:
+    return str(os.getenv('ALLOW_MULTIPLE_COMPANIES','')).strip().lower() in TRUTHY
+
+
+def registered_company_count(include_default: bool = False) -> int:
+    ensure_registry()
+    condition = "status='Active'" if include_default else "status='Active' AND tenant_key<>'default'"
+    with sqlite3.connect(REGISTRY_PATH)as c:
+        return int(c.execute(f'SELECT COUNT(*) FROM tenants WHERE {condition}').fetchone()[0])
+
+
+def company_registration_status() -> dict:
+    count = registered_company_count(include_default=False)
+    multiple = allow_multiple_companies()
+    return {
+        'registration_enabled': multiple or count == 0,
+        'registered_company_count': count,
+        'multiple_company_registration': multiple,
+    }
 
 
 def tenant_record(key: str):
@@ -76,12 +99,21 @@ def _create_schema(target: Path):
 
 def provision_tenant(key: str, company_name: str) -> Path:
     ensure_registry();key=normalize_tenant_key(key);target=(TENANT_ROOT/f'{key}.db').resolve()
+    if not allow_multiple_companies() and registered_company_count(include_default=False)>0:raise FileExistsError('Company registration is closed for this installation')
+    try:target.relative_to(TENANT_ROOT)
+    except ValueError:raise ValueError('Company database path must stay inside the tenant data directory')
     if target.exists():raise FileExistsError('Company database already exists')
     with sqlite3.connect(REGISTRY_PATH)as registry:
         if registry.execute('SELECT 1 FROM tenants WHERE tenant_key=? OR lower(company_name)=lower(?)',(key,company_name)).fetchone():raise FileExistsError('Company name or login ID is already registered')
     _create_schema(target)
+    try:target.chmod(stat.S_IRUSR|stat.S_IWUSR)
+    except OSError:pass
     return target
 
 
 def register_tenant(key: str, company_name: str, target: Path):
-    with sqlite3.connect(REGISTRY_PATH)as c:c.execute('INSERT INTO tenants(tenant_key,company_name,database_path)VALUES(?,?,?)',(key,company_name,str(target)))
+    with sqlite3.connect(REGISTRY_PATH)as c:
+        c.execute('BEGIN IMMEDIATE')
+        if not allow_multiple_companies() and c.execute("SELECT 1 FROM tenants WHERE tenant_key<>'default' AND status='Active' LIMIT 1").fetchone():
+            raise FileExistsError('Company registration is closed for this installation')
+        c.execute('INSERT INTO tenants(tenant_key,company_name,database_path)VALUES(?,?,?)',(key,company_name,str(target)))

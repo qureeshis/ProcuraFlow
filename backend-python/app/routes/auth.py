@@ -9,7 +9,7 @@ from ..audit import log_audit
 from ..database import fetch_all, fetch_one, transaction
 from ..permissions import defaults_for_role
 from ..security import User, authorized_warehouse_ids, permission_keys, roles, sign_token
-from ..tenancy import normalize_tenant_key, provision_tenant, register_tenant, tenant_database, tenant_database_for_registration
+from ..tenancy import company_registration_status, normalize_tenant_key, provision_tenant, register_tenant, tenant_database, tenant_database_for_registration
 
 router = APIRouter(prefix='/api/auth', tags=['auth'])
 VALID_ROLES = ['SupplyChainManager','PurchaseManager','PurchaseOfficer','WarehouseManager','WarehouseSupervisor','Storekeeper']
@@ -55,6 +55,8 @@ def _login_in_active_tenant(body:dict,request:Request,tenant_key:str):
 
 @router.post('/register-company',status_code=201)
 def register_company(body:dict):
+    if not company_registration_status()['registration_enabled']:
+        raise HTTPException(403,'Company registration is closed for this installation')
     company_name=str(body.get('company_name')or'').strip();admin_name=str(body.get('admin_name')or'').strip();username=str(body.get('username')or'').strip();password=str(body.get('password')or'')
     if len(company_name)<3 or len(admin_name)<3 or len(username)<3:raise HTTPException(400,'Company name, administrator name, and username must each contain at least 3 characters')
     if len(password)<10:raise HTTPException(400,'Administrator password must contain at least 10 characters')
@@ -75,12 +77,21 @@ def register_company(body:dict):
                 employee_id=connection.execute("INSERT INTO employees(employee_code,name,department_id,position,status,approval_role,system_access_yn,email)VALUES('EMP-0001',?,?,'Supply Chain Manager','Active','SupplyChainManager',1,?)",(admin_name,department_id,str(body.get('admin_email')or'').strip()or None)).lastrowid
                 connection.execute("INSERT INTO users(employee_id,username,password_hash,full_name,role,is_active,must_change_password,password_changed_at,password_expires_at)VALUES(?,?,?,?, 'SupplyChainManager',1,0,datetime('now'),datetime('now','+90 days'))",(employee_id,username,hashed,admin_name))
         register_tenant(key,company_name,target)
-    except FileExistsError as error:raise HTTPException(409,str(error))
-    except sqlite3.IntegrityError:raise HTTPException(409,'Company login ID, company name, or administrator username is already registered')
+    except FileExistsError as error:
+        if target and target.exists():target.unlink(missing_ok=True)
+        status_code=403 if 'registration is closed' in str(error).lower() else 409
+        raise HTTPException(status_code,str(error))
+    except sqlite3.IntegrityError:
+        if target and target.exists():target.unlink(missing_ok=True)
+        raise HTTPException(409,'Company login ID, company name, or administrator username is already registered')
     except Exception:
         if target and target.exists():target.unlink(missing_ok=True)
         raise
     return {'company_key':key,'company_name':company_name,'message':'Company registered. Sign in with the company login ID and administrator account.'}
+
+@router.get('/registration-status')
+def registration_status():
+    return company_registration_status()
 
 @router.get('/me')
 def me(user: User):
