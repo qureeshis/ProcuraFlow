@@ -8,8 +8,9 @@ from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 load_dotenv()
 
-from .database import ensure_company_employee_schema
+from .database import ensure_company_employee_schema, initialize_database
 
+initialize_database()
 ensure_company_employee_schema()
 
 from .routes.auth import router as auth_router
@@ -90,7 +91,8 @@ async def security_headers(request: Request, call_next):
     actual_host = request.headers.get("host", "").lower()
     if allowed_hosts and actual_host not in allowed_hosts:
         return JSONResponse({"error": "This ProcuraFlow installation is not licensed for this host."}, 403)
-    if request.method not in {'GET','HEAD','OPTIONS'} and request.url.path not in {'/api/auth/login','/api/settings/maintenance/status'}:
+    public_write_paths = {'/api/auth/login','/api/auth/register-company','/api/settings/maintenance/status'}
+    if request.method not in {'GET','HEAD','OPTIONS'} and request.url.path not in public_write_paths:
         from .database import fetch_one
         maintenance=fetch_one('SELECT active_yn FROM system_maintenance WHERE id=1')or{}
         if maintenance.get('active_yn'):

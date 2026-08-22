@@ -24,6 +24,7 @@ venv/
 
 # Local databases and runtime files
 *.db
+!backend-python/app/bootstrap.db
 *.db-shm
 *.db-wal
 *.sqlite

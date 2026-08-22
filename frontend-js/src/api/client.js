@@ -4,10 +4,10 @@ const client = axios.create({
 });
 client.interceptors.request.use((config) => {
     const token = localStorage.getItem('procuraflow_token');
-    if (token)
+    if (token && !config.skipAuth)
         config.headers.Authorization = `Bearer ${token}`;
     const companyKey = localStorage.getItem('procuraflow_company_key');
-    if (companyKey)
+    if (companyKey && !config.skipTenant)
         config.headers['X-Company-Key'] = companyKey;
     return config;
 });

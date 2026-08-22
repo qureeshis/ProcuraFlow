@@ -1,4 +1,5 @@
 import os
+import shutil
 import sqlite3
 from contextvars import ContextVar
 from contextlib import contextmanager
@@ -6,8 +7,29 @@ from pathlib import Path
 
 BACKEND_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DB = BACKEND_ROOT / "procuraflow.db"
+BOOTSTRAP_DB = Path(__file__).resolve().parent / "bootstrap.db"
 DB_PATH = Path(os.getenv("DB_PATH", str(DEFAULT_DB))).resolve()
 ACTIVE_DB_PATH: ContextVar[Path | None] = ContextVar('active_tenant_db_path', default=None)
+
+
+def initialize_database() -> None:
+    """Create a new installation from the bundled schema-only database."""
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+    if DB_PATH.exists():
+        with sqlite3.connect(DB_PATH) as connection:
+            tables = connection.execute(
+                "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'"
+            ).fetchall()
+            if any(row[0] == 'invoices' for row in tables):
+                return
+            if tables:
+                raise RuntimeError(
+                    f'Database at {DB_PATH} has an incomplete schema; restore it from backup before starting ProcuraFlow'
+                )
+        DB_PATH.unlink()
+    if not BOOTSTRAP_DB.is_file():
+        raise RuntimeError(f'ProcuraFlow bootstrap database is missing: {BOOTSTRAP_DB}')
+    shutil.copy2(BOOTSTRAP_DB, DB_PATH)
 
 
 def active_db_path() -> Path:
