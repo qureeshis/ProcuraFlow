@@ -26,6 +26,9 @@ from .routes.settings import router as settings_router
 from .routes.workforce import router as workforce_router
 from .routes.controls import router as controls_router
 from .backup_service import scheduler_loop
+from .tenancy import tenant_record
+from .database import reset_database, use_database
+import jwt
 
 app = FastAPI(title="ProcuraFlow", description="Precast Supply Chain Control System", docs_url=None, redoc_url=None)
 LOGO_DIRECTORY = Path(__file__).resolve().parents[1] / 'uploads' / 'logos'
@@ -61,6 +64,23 @@ app.include_router(warehouse_router)
 app.include_router(settings_router)
 app.include_router(workforce_router)
 app.include_router(controls_router)
+
+@app.middleware("http")
+async def tenant_database_boundary(request:Request,call_next):
+    header_key=str(request.headers.get('x-company-key')or'').strip().lower();token_key=''
+    authorization=str(request.headers.get('authorization')or'')
+    if authorization.lower().startswith('bearer '):
+        try:token_key=str(jwt.decode(authorization.split(' ',1)[1],options={'verify_signature':False}).get('tenant_key')or'').lower()
+        except jwt.PyJWTError:token_key=''
+    if header_key and token_key and header_key!=token_key:return JSONResponse({'error':'Session company does not match the requested company'},401)
+    key=token_key or header_key;context_token=None
+    if key:
+        tenant=tenant_record(key)
+        if not tenant:return JSONResponse({'error':'Company login ID was not found'},401)
+        context_token=use_database(Path(tenant['database_path']))
+    try:return await call_next(request)
+    finally:
+        if context_token is not None:reset_database(context_token)
 
 
 @app.middleware("http")

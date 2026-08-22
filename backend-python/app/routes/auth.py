@@ -1,4 +1,5 @@
 import json
+import sqlite3
 from datetime import datetime, timezone
 
 import bcrypt
@@ -8,12 +9,20 @@ from ..audit import log_audit
 from ..database import fetch_all, fetch_one, transaction
 from ..permissions import defaults_for_role
 from ..security import User, authorized_warehouse_ids, permission_keys, roles, sign_token
+from ..tenancy import normalize_tenant_key, provision_tenant, register_tenant, tenant_database, tenant_database_for_registration
 
 router = APIRouter(prefix='/api/auth', tags=['auth'])
 VALID_ROLES = ['SupplyChainManager','PurchaseManager','PurchaseOfficer','WarehouseManager','WarehouseSupervisor','Storekeeper']
 
 @router.post('/login')
 def login(body: dict, request: Request):
+    try:tenant_key=normalize_tenant_key(body.get('company_key')or request.headers.get('x-company-key')or'default')
+    except ValueError as error:raise HTTPException(400,str(error))
+    try:
+        with tenant_database(tenant_key):return _login_in_active_tenant(body,request,tenant_key)
+    except LookupError:raise HTTPException(401,'Invalid company login ID, username, or password')
+
+def _login_in_active_tenant(body:dict,request:Request,tenant_key:str):
     maintenance=fetch_one('SELECT active_yn FROM system_maintenance WHERE id=1')or{}
     if maintenance.get('active_yn'):raise HTTPException(503,'SYSTEM MAINTENANCE — Month-End Backup in Progress. Please wait until the backup is complete.')
     username, password = str(body.get('username') or '').strip(), str(body.get('password') or '')
@@ -35,7 +44,7 @@ def login(body: dict, request: Request):
     if user.get('locked_reason'):
         raise HTTPException(423, f"Account temporarily locked: {user['locked_reason']}. Contact the Supply Chain Manager.")
     ids = authorized_warehouse_ids(user['id'])
-    payload = {'id': user['id'], 'username': user['username'], 'role': user['role'], 'full_name': user['full_name'],
+    payload = {'id': user['id'], 'username': user['username'], 'role': user['role'], 'full_name': user['full_name'], 'tenant_key':tenant_key,
                'warehouse_id': ids[0] if len(ids) == 1 else user.get('warehouse_id'), 'warehouse_ids': ids,
                'warehouse_name': (fetch_one('SELECT name FROM warehouses WHERE id=?', (user.get('warehouse_id'),)) or {}).get('name'),
                'permission_keys': permission_keys(user), 'signature_url': access.get('signature_url'), 'must_change_password': bool(user.get('must_change_password')),
@@ -44,9 +53,38 @@ def login(body: dict, request: Request):
         connection.execute("INSERT INTO user_activity_log(user_id,full_name,username,role,event_type,current_action,ip_address) VALUES(?,?,?,?,'Login','Signed in',?)", (user['id'], user['full_name'], user['username'], user['role'], request.client.host if request.client else None))
     return {'token': sign_token(payload), 'user': payload}
 
+@router.post('/register-company',status_code=201)
+def register_company(body:dict):
+    company_name=str(body.get('company_name')or'').strip();admin_name=str(body.get('admin_name')or'').strip();username=str(body.get('username')or'').strip();password=str(body.get('password')or'')
+    if len(company_name)<3 or len(admin_name)<3 or len(username)<3:raise HTTPException(400,'Company name, administrator name, and username must each contain at least 3 characters')
+    if len(password)<10:raise HTTPException(400,'Administrator password must contain at least 10 characters')
+    try:key=normalize_tenant_key(body.get('company_key')or company_name)
+    except ValueError as error:raise HTTPException(400,str(error))
+    target=None
+    try:
+        target=provision_tenant(key,company_name)
+        with tenant_database_for_registration(target):
+            from ..database import ensure_company_employee_schema
+            ensure_company_employee_schema()
+            hashed=bcrypt.hashpw(password.encode(),bcrypt.gensalt(rounds=12)).decode()
+            with transaction(immediate=True)as connection:
+                connection.execute("INSERT INTO company(name,email,phone,country_code,base_currency,time_zone,financial_year)VALUES(?,?,?,?,?,?,?)",(company_name,str(body.get('company_email')or'').strip()or None,str(body.get('company_phone')or'').strip()or None,str(body.get('country_code')or'SA'),str(body.get('base_currency')or'SAR'),str(body.get('time_zone')or'Asia/Riyadh'),str(body.get('financial_year')or'')))
+                department=connection.execute("SELECT id FROM departments WHERE lower(name)='administration' AND deleted_at IS NULL LIMIT 1").fetchone()
+                department_id=department['id']if department else connection.execute("INSERT INTO departments(name)VALUES('Administration')").lastrowid
+                employee_id=connection.execute("INSERT INTO employees(employee_code,name,department_id,position,status,approval_role,system_access_yn,email)VALUES('EMP-0001',?,?,'Supply Chain Manager','Active','SupplyChainManager',1,?)",(admin_name,department_id,str(body.get('admin_email')or'').strip()or None)).lastrowid
+                connection.execute("INSERT INTO users(employee_id,username,password_hash,full_name,role,is_active,must_change_password,password_changed_at,password_expires_at)VALUES(?,?,?,?, 'SupplyChainManager',1,0,datetime('now'),datetime('now','+90 days'))",(employee_id,username,hashed,admin_name))
+        register_tenant(key,company_name,target)
+    except FileExistsError as error:raise HTTPException(409,str(error))
+    except sqlite3.IntegrityError:raise HTTPException(409,'Company login ID, company name, or administrator username is already registered')
+    except Exception:
+        if target and target.exists():target.unlink(missing_ok=True)
+        raise
+    return {'company_key':key,'company_name':company_name,'message':'Company registered. Sign in with the company login ID and administrator account.'}
+
 @router.get('/me')
 def me(user: User):
     result = fetch_one('SELECT u.id,u.username,u.role,u.full_name,u.warehouse_id,w.name warehouse_name,u.must_change_password,u.password_expires_at,e.signature_url FROM users u LEFT JOIN warehouses w ON w.id=u.warehouse_id LEFT JOIN employees e ON e.id=u.employee_id WHERE u.id=?', (user['id'],)) or user
+    result['tenant_key']=user['tenant_key']
     result['permission_keys'] = permission_keys(user)
     result['warehouse_ids'] = authorized_warehouse_ids(user['id'])
     result['must_change_password'] = bool(result.get('must_change_password'))

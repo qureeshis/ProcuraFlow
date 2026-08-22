@@ -14,8 +14,10 @@ export function AuthProvider({ children }) {
         setUser(JSON.parse(stored));
         client.get('/auth/me').then(({ data }) => { localStorage.setItem('procuraflow_user', JSON.stringify(data)); setUser(data); }).finally(() => setLoading(false));
     }, []);
-    async function login(username, password) {
-        const { data } = await client.post('/auth/login', { username, password });
+    async function login(companyKey, username, password) {
+        const normalizedCompanyKey = String(companyKey || '').trim().toLowerCase();
+        const { data } = await client.post('/auth/login', { company_key: normalizedCompanyKey, username, password }, { headers: { 'X-Company-Key': normalizedCompanyKey } });
+        localStorage.setItem('procuraflow_company_key', normalizedCompanyKey);
         localStorage.setItem('procuraflow_token', data.token);
         localStorage.setItem('procuraflow_user', JSON.stringify(data.user));
         setUser(data.user);

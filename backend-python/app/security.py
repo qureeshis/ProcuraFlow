@@ -26,6 +26,7 @@ def authorized_warehouse_ids(user_id: int):
 
 def sign_token(payload: dict):
     data = dict(payload)
+    data.setdefault('tenant_key','default')
     maintenance=fetch_one('SELECT session_epoch FROM system_maintenance WHERE id=1')or{'session_epoch':1}
     data['session_epoch']=int(maintenance['session_epoch']);data['iat']=datetime.now(timezone.utc)
     data['exp'] = datetime.now(timezone.utc) + timedelta(hours=8)
@@ -47,6 +48,7 @@ def current_user(credentials: Annotated[HTTPAuthorizationCredentials | None, Dep
         decoded = jwt.decode(credentials.credentials, JWT_SECRET, algorithms=['HS256'])
     except jwt.PyJWTError:
         raise HTTPException(401, 'Invalid or expired token')
+    if not decoded.get('tenant_key'):raise HTTPException(401,'Session is missing its company security boundary. Sign in again.')
     maintenance=fetch_one('SELECT active_yn,session_epoch FROM system_maintenance WHERE id=1')or{'active_yn':0,'session_epoch':1}
     if maintenance['active_yn']:raise HTTPException(503,'ProcuraFlow is temporarily unavailable while the scheduled month-end backup is being completed')
     if int(decoded.get('session_epoch')or 0)!=int(maintenance['session_epoch']):raise HTTPException(401,'Your session ended for controlled system maintenance. Sign in again.')
@@ -61,6 +63,7 @@ def current_user(credentials: Annotated[HTTPAuthorizationCredentials | None, Dep
         raise HTTPException(423, f"Account temporarily locked: {account['locked_reason']}")
     account['permission_keys'] = permission_keys(account)
     account['warehouse_ids'] = authorized_warehouse_ids(account['id'])
+    account['tenant_key']=decoded['tenant_key']
     return account
 
 User = Annotated[dict, Depends(current_user)]

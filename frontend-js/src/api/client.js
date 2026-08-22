@@ -6,6 +6,9 @@ client.interceptors.request.use((config) => {
     const token = localStorage.getItem('procuraflow_token');
     if (token)
         config.headers.Authorization = `Bearer ${token}`;
+    const companyKey = localStorage.getItem('procuraflow_company_key');
+    if (companyKey)
+        config.headers['X-Company-Key'] = companyKey;
     return config;
 });
 client.interceptors.response.use((res) => res, (err) => {

@@ -1,15 +1,29 @@
 import os
 import sqlite3
+from contextvars import ContextVar
 from contextlib import contextmanager
 from pathlib import Path
 
 BACKEND_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DB = BACKEND_ROOT / "procuraflow.db"
 DB_PATH = Path(os.getenv("DB_PATH", str(DEFAULT_DB))).resolve()
+ACTIVE_DB_PATH: ContextVar[Path | None] = ContextVar('active_tenant_db_path', default=None)
+
+
+def active_db_path() -> Path:
+    return ACTIVE_DB_PATH.get() or DB_PATH
+
+
+def use_database(path: Path):
+    return ACTIVE_DB_PATH.set(Path(path).resolve())
+
+
+def reset_database(token):
+    ACTIVE_DB_PATH.reset(token)
 
 
 def connect() -> sqlite3.Connection:
-    connection = sqlite3.connect(DB_PATH, timeout=30, isolation_level=None)
+    connection = sqlite3.connect(active_db_path(), timeout=30, isolation_level=None)
     connection.row_factory = sqlite3.Row
     connection.execute("PRAGMA foreign_keys = ON")
     connection.execute("PRAGMA busy_timeout = 30000")

@@ -7,6 +7,7 @@ from app.main import app
 PUBLIC_OPERATIONS = {
     ("GET", "/api/health"),
     ("POST", "/api/auth/login"),
+    ("POST", "/api/auth/register-company"),
     ("GET", "/api/settings/branding"),
     ("GET", "/api/settings/maintenance/status"),
 }

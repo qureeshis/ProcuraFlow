@@ -5,7 +5,7 @@ from zoneinfo import ZoneInfo,ZoneInfoNotFoundError
 from fastapi import APIRouter,Depends,File,HTTPException,UploadFile
 from fastapi.responses import FileResponse,StreamingResponse
 from ..audit import log_audit
-from ..database import DB_PATH,fetch_all,fetch_one,transaction
+from ..database import active_db_path,fetch_all,fetch_one,transaction
 from ..security import User,roles
 from ..stock import receive
 from ..backup_service import backup_schedule,verify_backup,scheduler_tick
@@ -38,7 +38,7 @@ def set_value(key:str,body:dict,user:User):
 @router.post('/backup')
 def backup(user:dict=Depends(admin)):
     name=f"procuraflow-{secrets.token_hex(6)}.db";target=BACKUPS/name
-    source=sqlite3.connect(DB_PATH);counts={table:source.execute(f'SELECT COUNT(*) FROM {table}').fetchone()[0]for table in('users','employees','items','warehouses','inventory_stock','inventory_layers','stock_ledger','audit_log')};destination=sqlite3.connect(target);source.backup(destination);destination.close();source.close();verification=verify_backup(target,counts)
+    source=sqlite3.connect(active_db_path());counts={table:source.execute(f'SELECT COUNT(*) FROM {table}').fetchone()[0]for table in('users','employees','items','warehouses','inventory_stock','inventory_layers','stock_ledger','audit_log')};destination=sqlite3.connect(target);source.backup(destination);destination.close();source.close();verification=verify_backup(target,counts)
     with transaction(immediate=True)as c:c.execute("INSERT INTO backup_restore_history(backup_reference,backup_type,database_included,attachments_included,configuration_included,backup_status,restore_tested,restore_test_date,restore_result,notes)VALUES(?,'MANUAL',1,0,1,'SUCCESS',1,datetime('now'),?,'Verified FastAPI SQLite backup')",(name,verification));log_audit(c,'backup_restore_history',None,'CREATE',user['id'],after={'backup_reference':name,'verification':verification})
     return FileResponse(target,media_type='application/octet-stream',filename=name)
 
