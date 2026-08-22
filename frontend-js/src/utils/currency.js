@@ -1,13 +1,17 @@
 export const DEFAULT_COMPANY_CURRENCY = 'SAR';
+function currencyStorageKey() {
+    const tenant = typeof window === 'undefined' ? 'default' : (localStorage.getItem('procuraflow_company_key') || 'default');
+    return `procuraflow_currency:${tenant}`;
+}
 export function getStoredCurrency(defaultValue = DEFAULT_COMPANY_CURRENCY) {
     if (typeof window === 'undefined')
         return defaultValue;
-    return (localStorage.getItem('procuraflow_currency') || defaultValue).toUpperCase();
+    return (localStorage.getItem(currencyStorageKey()) || defaultValue).toUpperCase();
 }
 export function setStoredCurrency(currency) {
     if (typeof window === 'undefined')
         return;
-    localStorage.setItem('procuraflow_currency', (currency || DEFAULT_COMPANY_CURRENCY).toUpperCase());
+    localStorage.setItem(currencyStorageKey(), (currency || DEFAULT_COMPANY_CURRENCY).toUpperCase());
     window.dispatchEvent(new CustomEvent('procuraflow:currency-changed', { detail: getStoredCurrency() }));
 }
 /** Format money with an English ISO code so every currency remains legible. */

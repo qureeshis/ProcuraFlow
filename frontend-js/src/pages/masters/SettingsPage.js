@@ -48,8 +48,8 @@ export default function SettingsPage() {
         });
         client.get('/settings/company').then((res) => {
             setCompany(res.data || {});
-            if (res.data?.currency)
-                setStoredCurrency(res.data.currency);
+            if (res.data?.base_currency || res.data?.currency)
+                setStoredCurrency(res.data.base_currency || res.data.currency);
         });
         client.get('/auth/users').then((res) => setUsers(res.data)).catch(() => undefined);
         client.get('/workforce/reference').then(res => setReference(res.data)).catch(() => undefined);
@@ -74,7 +74,7 @@ export default function SettingsPage() {
             await Promise.all(APPROVAL_ROLES.map(({ key }) => client.put(`/settings/${key}`, { value: limits[key] || '0' })));
             if (logoFile && !(await uploadLogo()))
                 return;
-            setStoredCurrency(company.currency || DEFAULT_COMPANY_CURRENCY);
+            setStoredCurrency(company.base_currency || company.currency || DEFAULT_COMPANY_CURRENCY);
             await refreshBranding();
             setSaved(true);
             setMessage('All editable system settings were saved successfully.');

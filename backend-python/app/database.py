@@ -78,9 +78,25 @@ def fetch_all(sql: str, parameters=()):
         return [dict(row) for row in connection.execute(sql, parameters).fetchall()]
 
 
+def company_base_currency(default: str = 'SAR') -> str:
+    row = fetch_one(
+        "SELECT COALESCE(NULLIF(trim(base_currency),''),NULLIF(trim(currency),''),?) value "
+        "FROM company WHERE deleted_at IS NULL ORDER BY id DESC LIMIT 1",
+        (default,),
+    ) or {}
+    return str(row.get('value') or default).strip().upper()
+
+
 def ensure_company_employee_schema():
     """Apply small, idempotent compatibility changes to existing installations."""
     with transaction(immediate=True) as connection:
+        company_columns = {row['name'] for row in connection.execute('PRAGMA table_info(company)')}
+        if {'currency', 'base_currency'} <= company_columns:
+            connection.execute(
+                "UPDATE company SET currency=upper(trim(base_currency)) "
+                "WHERE trim(COALESCE(base_currency,''))<>'' "
+                "AND upper(trim(COALESCE(currency,'')))<>upper(trim(base_currency))"
+            )
         connection.execute("""CREATE TABLE IF NOT EXISTS delegated_authorities(
             id INTEGER PRIMARY KEY AUTOINCREMENT,delegation_number TEXT NOT NULL UNIQUE,
             delegator_employee_id INTEGER NOT NULL REFERENCES employees(id),delegate_employee_id INTEGER NOT NULL REFERENCES employees(id),

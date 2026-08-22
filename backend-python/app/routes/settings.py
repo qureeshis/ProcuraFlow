@@ -22,6 +22,9 @@ def branding():
     return {'company_name':row.get('name')or'Company Name','logo_url':row.get('logo_url'),'address':row.get('address')or'','phone':row.get('phone')or'','email':row.get('email')or'','website':row.get('website')or'','tax_info':row.get('tax_info')or'','registration_number':row.get('registration_number')or'','branch_info':row.get('branch_info')or'','currency':row.get('base_currency')or row.get('currency')or'SAR','base_currency':row.get('base_currency')or row.get('currency')or'SAR','country_code':row.get('country_code')or'SA','time_zone':row.get('time_zone')or'Asia/Riyadh','financial_year':row.get('financial_year')or'','application_name':'ProcuraFlow'}
 @router.put('/company')
 def update_company(body:dict,user:dict=Depends(admin)):
+    body=dict(body)
+    selected_currency=str(body.get('base_currency')or body.get('currency')or'').strip().upper()
+    if selected_currency:body.update(currency=selected_currency,base_currency=selected_currency)
     allowed=['name','address','phone','email','website','registration_number','branch_info','tax_info','currency','base_currency','country_code','city_id','postal_code','region_province','financial_year','time_zone'];keys=[k for k in body if k in allowed]
     if not keys:raise HTTPException(400,'No company fields provided')
     row=fetch_one('SELECT * FROM company WHERE deleted_at IS NULL ORDER BY id DESC LIMIT 1')

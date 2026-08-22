@@ -2,9 +2,9 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { lazy, Suspense, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useAuth } from "./contexts/AuthContext";
+import { useBranding } from "./contexts/BrandingContext";
 import Layout from "./components/Layout";
 import client from "./api/client";
-import { setStoredCurrency } from "./utils/currency";
 const Login = lazy(() => import("./pages/Login"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const QuickStartPage = lazy(() => import("./pages/QuickStartPage"));
@@ -80,17 +80,13 @@ function RoleRoute({ children, allowedRoles }) {
 }
 export default function App() {
   const { user, loading } = useAuth();
+  const { refresh: refreshBranding } = useBranding();
   useEffect(() => {
     // The company endpoint is protected. Requesting it while the login screen
     // is displayed triggers the global 401 redirect and reloads that screen.
     if (loading || !user) return;
-    client
-      .get("/settings/company")
-      .then((res) => {
-        if (res.data?.currency) setStoredCurrency(res.data.currency);
-      })
-      .catch(() => undefined);
-  }, [loading, user]);
+    refreshBranding().catch(() => undefined);
+  }, [loading, user, refreshBranding]);
   return _jsx(Suspense, {
     fallback: _jsx("div", {
       className: "min-h-screen flex items-center justify-center text-slate-500",

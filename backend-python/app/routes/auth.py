@@ -68,7 +68,8 @@ def register_company(body:dict):
             ensure_company_employee_schema()
             hashed=bcrypt.hashpw(password.encode(),bcrypt.gensalt(rounds=12)).decode()
             with transaction(immediate=True)as connection:
-                connection.execute("INSERT INTO company(name,email,phone,country_code,base_currency,time_zone,financial_year)VALUES(?,?,?,?,?,?,?)",(company_name,str(body.get('company_email')or'').strip()or None,str(body.get('company_phone')or'').strip()or None,str(body.get('country_code')or'SA'),str(body.get('base_currency')or'SAR'),str(body.get('time_zone')or'Asia/Riyadh'),str(body.get('financial_year')or'')))
+                selected_currency=str(body.get('base_currency')or'SAR').strip().upper()
+                connection.execute("INSERT INTO company(name,email,phone,country_code,currency,base_currency,time_zone,financial_year)VALUES(?,?,?,?,?,?,?,?)",(company_name,str(body.get('company_email')or'').strip()or None,str(body.get('company_phone')or'').strip()or None,str(body.get('country_code')or'SA'),selected_currency,selected_currency,str(body.get('time_zone')or'Asia/Riyadh'),str(body.get('financial_year')or'')))
                 department=connection.execute("SELECT id FROM departments WHERE lower(name)='administration' AND deleted_at IS NULL LIMIT 1").fetchone()
                 department_id=department['id']if department else connection.execute("INSERT INTO departments(name)VALUES('Administration')").lastrowid
                 employee_id=connection.execute("INSERT INTO employees(employee_code,name,department_id,position,status,approval_role,system_access_yn,email)VALUES('EMP-0001',?,?,'Supply Chain Manager','Active','SupplyChainManager',1,?)",(admin_name,department_id,str(body.get('admin_email')or'').strip()or None)).lastrowid

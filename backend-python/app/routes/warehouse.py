@@ -1,7 +1,7 @@
 from fastapi import APIRouter,Depends,HTTPException
 from ..audit import log_audit
 from ..approval_routing import approval_authorized,employee_for_user,route_approver
-from ..database import fetch_all,fetch_one,transaction
+from ..database import company_base_currency,fetch_all,fetch_one,transaction
 from ..security import User,roles
 from ..delegated_authority import active_delegation,record_delegated_use
 from ..stock import receive,consume
@@ -98,7 +98,7 @@ def create_issue(body:dict,user:dict=Depends(roles(*WH))):
             else:cost,used=consume(c,item_id=x['item_id'],warehouse_id=x['warehouse_id'],location_id=x['location_id'],quantity=x['quantity'],transaction_type='MATERIAL_ISSUE',reference_number=num,reference_table='material_issues',reference_id=iid,created_by=user['id'])
             line=c.execute('INSERT INTO material_issue_items(issue_id,item_id,warehouse_id,location_id,quantity,value)VALUES(?,?,?,?,?,?)',(iid,x['item_id'],x['warehouse_id'],x['location_id'],x['quantity'],cost))
             for layer_id,qty,cost_each in used:c.execute('INSERT INTO material_issue_layer_usage(material_issue_item_id,inventory_layer_id,quantity,unit_cost)VALUES(?,?,?,?)',(line.lastrowid,layer_id,qty,cost_each))
-        if required:c.execute("INSERT INTO approval_log(document_type,document_id,document_number,required_role,requested_by,decision,approval_value,approval_currency,approver_employee_id,approver_role,workflow_level,escalation_rule)VALUES('ISSUE',?,?,?,?,'Pending',?,'SAR',?,?,?,?)",(iid,num,approver['user_role'],user['id'],estimate,approver['id'],approver['user_role'],str(level),rule))
+        if required:c.execute("INSERT INTO approval_log(document_type,document_id,document_number,required_role,requested_by,decision,approval_value,approval_currency,approver_employee_id,approver_role,workflow_level,escalation_rule)VALUES('ISSUE',?,?,?,?,'Pending',?,?,?,?,?,?)",(iid,num,approver['user_role'],user['id'],estimate,company_base_currency(),approver['id'],approver['user_role'],str(level),rule))
         log_audit(c,'material_issues',iid,'CREATE',user['id'],after=body)
     return {'id':iid,'issue_number':num,'status':status}
 @router.put('/material-issues/{issue_id}/approve')
