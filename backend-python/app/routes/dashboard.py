@@ -97,8 +97,10 @@ def tasks(user: User):
 
 
 @router.get('/kpis')
-def kpis(user: User):
+def kpis(request: Request, user: User):
     company = fetch_one('SELECT name,logo_url,financial_year FROM company ORDER BY id DESC LIMIT 1') or {}
+    if str(company.get('logo_url') or '').startswith('/'):
+        company['logo_url'] = f"{str(request.base_url).rstrip('/')}{company['logo_url']}"
     inv_where, inv_args = warehouse_filter(user, 'il.warehouse_id')
     issue_where, issue_args = warehouse_filter(user, 'mii.warehouse_id')
     ledger_where, ledger_args = warehouse_filter(user, 'sl.warehouse_id')

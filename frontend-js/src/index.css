@@ -532,6 +532,27 @@ body {
   image-rendering: auto;
   filter: drop-shadow(0 2px 3px rgba(15, 23, 42, 0.1));
 }
+.executive-hero .company-hero-name,
+.executive-hero h1 {
+  color: #ffffff !important;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+  white-space: normal !important;
+  text-shadow: 0 2px 14px rgba(2, 6, 23, 0.35);
+}
+.executive-company-identity {
+  max-width: min(100%, 46rem);
+}
+.executive-hero div:has(> img[alt="Company logo"]) {
+  width: 8rem !important;
+  height: 5rem !important;
+  padding: 0.625rem !important;
+  overflow: hidden;
+}
+.executive-hero img[alt="Company logo"] {
+  width: 100% !important;
+  height: 100% !important;
+}
 
 .card {
   @apply bg-white/95 rounded-xl border border-sky-100 shadow-sm;
@@ -2469,7 +2490,7 @@ button[class*="bg-red-"]:hover:not(:disabled) {
   height: 2.5rem;
   overflow: hidden;
   color: transparent !important;
-  background: url('/branding/procuraflow-logo.png') left center / contain no-repeat;
+  background: url('/branding/procuraflow-logo.png?v=20260822') left center / contain no-repeat;
   font-size: 0 !important;
 }
 .report-product span { display: none; }
