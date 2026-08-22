@@ -1,0 +1,187 @@
+from fastapi import APIRouter, Depends, HTTPException, Request
+
+from ..database import fetch_all, fetch_one, transaction
+from ..security import User, roles
+from ..backup_service import backup_schedule
+
+router = APIRouter(prefix='/api/dashboard', tags=['dashboard'])
+
+
+def warehouse_filter(user, column):
+    if user['role'] == 'SupplyChainManager':
+        return '1=1', []
+    ids = [int(value) for value in user.get('warehouse_ids', [])]
+    return f"{column} IN ({','.join('?' for _ in ids) or 'NULL'})", ids
+
+
+def month_series(rows, fields):
+    found = {row['month']: row for row in rows}
+    months = fetch_all("""WITH RECURSIVE m(month,n) AS (
+        SELECT strftime('%Y-%m','now','start of month','-5 months'),0 UNION ALL
+        SELECT strftime('%Y-%m',month||'-01','+1 month'),n+1 FROM m WHERE n<5)
+        SELECT month FROM m ORDER BY month""")
+    return [{'month': m['month'], 'label': m['month'], **{
+        field: round(float(found.get(m['month'], {}).get(field) or 0), 2) for field in fields
+    }} for m in months]
+
+
+@router.post('/activity/heartbeat')
+def heartbeat(body: dict, request: Request, user: User):
+    path = str(body.get('page_path') or '/').split('?')[0]
+    with transaction(immediate=True) as connection:
+        prior = connection.execute('SELECT page_path FROM user_activity WHERE user_id=?', (user['id'],)).fetchone()
+        connection.execute("""INSERT INTO user_activity(user_id,last_seen,page_path,current_action,ip_address,user_agent)
+            VALUES(?,datetime('now'),?,'Working in ProcuraFlow',?,?) ON CONFLICT(user_id) DO UPDATE SET
+            last_seen=datetime('now'),page_path=excluded.page_path,current_action=excluded.current_action,
+            ip_address=excluded.ip_address,user_agent=excluded.user_agent""",
+            (user['id'], path, request.client.host if request.client else None, str(request.headers.get('user-agent', ''))[:300]))
+        if not prior or prior['page_path'] != path:
+            connection.execute("""INSERT INTO user_activity_log(user_id,full_name,username,role,event_type,current_action,page_path,ip_address)
+                VALUES(?,?,?,?,'Page View','Working in ProcuraFlow',?,?)""",
+                (user['id'], user['full_name'], user['username'], user['role'], path, request.client.host if request.client else None))
+    return {'success': True}
+
+
+@router.post('/activity/logout')
+def logout(user: User):
+    with transaction(immediate=True) as connection:
+        connection.execute("UPDATE user_activity SET last_seen=datetime('now','-1 day'),current_action='Signed out' WHERE user_id=?", (user['id'],))
+        connection.execute("INSERT INTO user_activity_log(user_id,full_name,username,role,event_type,current_action) VALUES(?,?,?,?,'Logout','Signed out')", (user['id'], user['full_name'], user['username'], user['role']))
+    return {'success': True}
+
+
+@router.get('/activity/live')
+def live(_user: dict = Depends(roles('SupplyChainManager'))):
+    return {'generated_at': fetch_one("SELECT datetime('now') value")['value'], 'users': fetch_all("""SELECT u.id,u.full_name,u.username,u.role,u.is_active,u.locked_reason,e.employee_code,d.name department_name,w.name warehouse_name,a.last_seen,a.page_path,a.current_action,CASE WHEN a.last_seen IS NULL OR (julianday('now')-julianday(a.last_seen))*86400>300 THEN 'Offline' WHEN (julianday('now')-julianday(a.last_seen))*86400>60 THEN 'Away' ELSE 'Online' END activity_status,MAX(0,CAST((julianday('now')-julianday(a.last_seen))*86400 AS INTEGER)) seconds_since_activity FROM users u LEFT JOIN employees e ON e.id=u.employee_id LEFT JOIN departments d ON d.id=e.department_id LEFT JOIN warehouses w ON w.id=COALESCE(u.warehouse_id,e.warehouse_id) LEFT JOIN user_activity a ON a.user_id=u.id WHERE u.deleted_at IS NULL ORDER BY a.last_seen DESC,u.full_name""")}
+
+
+@router.get('/notifications')
+def notifications(user: User):
+    return fetch_all('SELECT * FROM notifications WHERE user_id=? OR user_id IS NULL ORDER BY id DESC LIMIT 50', (user['id'],))
+
+
+@router.put('/notifications/{notification_id}/read')
+def read_notification(notification_id: int, user: User):
+    with transaction(immediate=True) as connection:
+        cursor = connection.execute('UPDATE notifications SET is_read=1 WHERE id=? AND(user_id=? OR user_id IS NULL)', (notification_id, user['id']))
+        if not cursor.rowcount:
+            raise HTTPException(404, 'Notification not found')
+    return {'success': True}
+
+
+@router.get('/tasks')
+def tasks(user: User):
+    result = []
+    if user['role'] in ['PurchaseManager', 'SupplyChainManager']:
+        result += [dict(type='PO approval', priority='High', **row) for row in fetch_all("SELECT id,po_number number,total_amount,status,created_at due_date FROM purchase_orders WHERE status='PendingApproval' ORDER BY created_at")]
+        result += [dict(type='PR review', priority='High', **row) for row in fetch_all("SELECT pr.id,pr.pr_number number,pr.status,pr.created_at due_date FROM purchase_requisitions pr WHERE pr.status='Submitted' AND NOT EXISTS(SELECT 1 FROM approval_log al WHERE al.document_type='PR' AND al.document_id=pr.id AND al.decision IN('Approved','Rejected')) ORDER BY pr.created_at")]
+    if user['role'] in ['PurchaseManager', 'PurchaseOfficer', 'SupplyChainManager']:
+        result += [dict(type='PO delivery overdue', priority='Critical', **row) for row in fetch_all("SELECT id,po_number number,status,committed_delivery_date due_date FROM purchase_orders WHERE status IN('Approved','Printed') AND committed_delivery_date IS NOT NULL AND date(committed_delivery_date)<date('now') ORDER BY committed_delivery_date")]
+        result += [dict(type='Three-way match exception', priority='High', **row) for row in fetch_all("SELECT id,invoice_number number,match_status status,invoice_date due_date FROM invoices WHERE match_status='Variance' ORDER BY invoice_date")]
+        result += [dict(type='RFQ closing', priority='High', **row) for row in fetch_all("SELECT id,rfq_number number,workflow_status status,closing_date due_date FROM rfqs WHERE workflow_status NOT IN('Awarded','Closed','Cancelled') AND date(closing_date)<=date('now','+2 days') ORDER BY closing_date")]
+        result += [dict(type='RFQ award approval', priority='High', **row) for row in fetch_all("SELECT id,rfq_number number,workflow_status status,closing_date due_date FROM rfqs WHERE workflow_status='Awaiting Approval' ORDER BY closing_date")]
+    if user['role'] in ['WarehouseManager', 'SupplyChainManager']:
+        predicate, params = warehouse_filter(user, 'mii.warehouse_id')
+        result += [dict(type='Issue approval', priority='High', **row) for row in fetch_all(f"SELECT mi.id,mi.issue_number number,mi.total_value,mi.status,mi.created_at due_date FROM material_issues mi WHERE mi.status='PendingApproval' AND EXISTS(SELECT 1 FROM material_issue_items mii WHERE mii.issue_id=mi.id AND {predicate}) ORDER BY mi.created_at", params)]
+        predicate, params = warehouse_filter(user, 'sa.warehouse_id')
+        result += [dict(type='Adjustment approval', priority='High', **row) for row in fetch_all(f"SELECT sa.id,sa.adjustment_number number,sa.status,sa.adjustment_date due_date FROM stock_adjustments sa WHERE sa.status='Pending' AND {predicate} ORDER BY sa.adjustment_date", params)]
+    if user['role'] in ['WarehouseManager', 'WarehouseSupervisor', 'Storekeeper', 'SupplyChainManager']:
+        predicate, params = warehouse_filter(user, 'il.warehouse_id')
+        result += [dict(type='Low stock', priority='High', **row) for row in fetch_all(f"""SELECT i.id,i.item_code number,'Low Stock' status,date('now') due_date FROM items i
+            LEFT JOIN inventory_layers il ON il.item_id=i.id AND {predicate} WHERE i.deleted_at IS NULL AND i.active_yn=1 AND i.reorder_level>0
+            GROUP BY i.id HAVING COALESCE(SUM(il.quantity_remaining),0)<=i.reorder_level ORDER BY i.item_code LIMIT 50""", params)]
+    if user['role'] == 'SupplyChainManager':
+        result += [dict(type='Duplicate items pending review', priority='Normal', **row) for row in fetch_all("SELECT id,printf('Duplicate review #%d',id) number,review_status status,date(detected_at) due_date FROM item_duplicate_reviews WHERE review_status='Pending Review' ORDER BY detected_at LIMIT 50")]
+        result += [dict(type='Employee coverage gap', priority='Critical', **row) for row in fetch_all("SELECT id,printf('%s · %s',calendar_date,role_code) number,warning_status status,calendar_date due_date FROM calendar_coverage_warnings WHERE warning_status='OPEN' ORDER BY calendar_date LIMIT 50")]
+    return result
+
+
+@router.get('/kpis')
+def kpis(user: User):
+    company = fetch_one('SELECT name,logo_url,financial_year FROM company ORDER BY id DESC LIMIT 1') or {}
+    inv_where, inv_args = warehouse_filter(user, 'il.warehouse_id')
+    issue_where, issue_args = warehouse_filter(user, 'mii.warehouse_id')
+    ledger_where, ledger_args = warehouse_filter(user, 'sl.warehouse_id')
+    inventory_value = fetch_one(f'SELECT COALESCE(SUM(il.quantity_remaining*il.unit_cost),0)value FROM inventory_layers il WHERE {inv_where}', inv_args)['value']
+    monthly_purchase = fetch_one("SELECT COALESCE(SUM(total_amount),0)value FROM purchase_orders WHERE status IN('Approved','Printed','Closed') AND strftime('%Y-%m',po_date)=strftime('%Y-%m','now')")['value']
+    monthly_consumption = fetch_one(f"""SELECT COALESCE(SUM(mii.value),0)value FROM material_issue_items mii JOIN material_issues mi ON mi.id=mii.issue_id
+        WHERE mi.status IN('Approved','Posted') AND strftime('%Y-%m',mi.issue_date)=strftime('%Y-%m','now') AND {issue_where}""", issue_args)['value']
+    stock = fetch_one(f"""SELECT SUM(CASE WHEN qty<=i.reorder_level AND i.reorder_level>0 THEN 1 ELSE 0 END) low_stock_items,
+        SUM(CASE WHEN qty<=0 THEN 1 ELSE 0 END) out_of_stock_items FROM items i JOIN
+        (SELECT i2.id,COALESCE(SUM(il.quantity_remaining),0)qty FROM items i2 LEFT JOIN inventory_layers il ON il.item_id=i2.id AND {inv_where}
+         WHERE i2.deleted_at IS NULL AND i2.active_yn=1 GROUP BY i2.id)b ON b.id=i.id""", inv_args) or {}
+    purchase = fetch_all("SELECT strftime('%Y-%m',po_date)month,SUM(total_amount)value FROM purchase_orders WHERE status IN('Approved','Printed','Closed') AND date(po_date)>=date('now','start of month','-5 months') GROUP BY month")
+    consumption = fetch_all(f"SELECT strftime('%Y-%m',mi.issue_date)month,SUM(mii.value)value FROM material_issue_items mii JOIN material_issues mi ON mi.id=mii.issue_id WHERE mi.status IN('Approved','Posted') AND date(mi.issue_date)>=date('now','start of month','-5 months') AND {issue_where} GROUP BY month", issue_args)
+    movement = fetch_all(f"""SELECT strftime('%Y-%m',sl.created_at)month,
+        SUM(CASE WHEN sl.quantity_change>0 THEN sl.quantity_change ELSE 0 END)stock_in,
+        SUM(CASE WHEN sl.quantity_change<0 THEN -sl.quantity_change ELSE 0 END)stock_out
+        FROM stock_ledger sl WHERE date(sl.created_at)>=date('now','start of month','-5 months') AND {ledger_where} GROUP BY month""", ledger_args)
+    invoice_trend = fetch_all("""SELECT strftime('%Y-%m',invoice_date)month,
+        SUM(CASE WHEN match_status IN('Matched','Verified') THEN 1 ELSE 0 END)matched,
+        SUM(CASE WHEN match_status='Variance' THEN 1 ELSE 0 END)exceptions,
+        SUM(CASE WHEN match_status='Pending' THEN 1 ELSE 0 END)pending FROM invoices
+        WHERE date(invoice_date)>=date('now','start of month','-5 months') GROUP BY month""")
+    warehouse_values = fetch_all(f"""SELECT w.id warehouse_id,w.name warehouse_name,ROUND(SUM(il.quantity_remaining*il.unit_cost),2)total_value
+        FROM warehouses w JOIN inventory_layers il ON il.warehouse_id=w.id WHERE w.deleted_at IS NULL AND {inv_where}
+        GROUP BY w.id,w.name ORDER BY total_value DESC""", inv_args)
+    departments = fetch_all(f"""SELECT COALESCE(d.name,'Unassigned')department_name,ROUND(SUM(mii.value),2)total_value
+        FROM material_issue_items mii JOIN material_issues mi ON mi.id=mii.issue_id JOIN employees e ON e.id=mi.employee_id
+        LEFT JOIN departments d ON d.id=e.department_id WHERE mi.status IN('Approved','Posted') AND {issue_where}
+        GROUP BY COALESCE(d.name,'Unassigned') ORDER BY total_value DESC""", issue_args)
+    counts = fetch_one("""SELECT
+        (SELECT COUNT(*) FROM purchase_orders WHERE status IN('Approved','Printed'))open_pos,
+        (SELECT COALESCE(SUM(total_amount),0) FROM purchase_orders WHERE status IN('Approved','Printed'))outstanding_po_value,
+        (SELECT COUNT(*) FROM purchase_orders WHERE status IN('Approved','Printed') AND committed_delivery_date IS NOT NULL AND date(committed_delivery_date)<date('now'))overdue_pos,
+        (SELECT COUNT(*) FROM purchase_requisitions WHERE status IN('Draft','Submitted','Approved'))open_prs,
+        (SELECT COUNT(*) FROM purchase_requisitions WHERE status='Submitted')pending_pr_approvals,
+        (SELECT COUNT(*) FROM suppliers WHERE deleted_at IS NULL)supplier_count,
+        (SELECT COUNT(*) FROM rfqs WHERE workflow_status NOT IN('Awarded','Closed','Cancelled'))open_rfqs,
+        (SELECT COUNT(*) FROM rfqs WHERE workflow_status IN('Issued','Quotations Pending'))rfqs_awaiting_quotations,
+        (SELECT COUNT(*) FROM rfqs WHERE workflow_status='Under Evaluation')rfqs_under_evaluation,
+        (SELECT COUNT(*) FROM rfqs WHERE workflow_status='Awaiting Approval')rfqs_awaiting_approval,
+        (SELECT COUNT(*) FROM rfqs WHERE workflow_status IN('Awarded','Partially Awarded') AND strftime('%Y-%m',updated_at)=strftime('%Y-%m','now'))rfqs_awarded_month,
+        (SELECT ROUND(COALESCE(AVG(n),0),2) FROM(SELECT COUNT(*)n FROM rfq_suppliers GROUP BY rfq_id))average_suppliers_per_rfq,
+        (SELECT ROUND(CASE WHEN COUNT(*)=0 THEN 0 ELSE 100.0*SUM(response_status IN('Received','Quotation Received'))/COUNT(*)END,2) FROM rfq_suppliers)supplier_response_rate,
+        (SELECT ROUND(COALESCE(AVG(rating),0),2) FROM suppliers WHERE deleted_at IS NULL)avg_supplier_rating,
+        (SELECT COUNT(*) FROM invoices WHERE match_status='Pending')invoices_pending,
+        (SELECT COUNT(*) FROM invoices WHERE match_status='Variance')invoice_exceptions,
+        (SELECT COUNT(*) FROM invoices WHERE match_status IN('Matched','Verified'))matched_invoices,
+        (SELECT COUNT(*) FROM item_duplicate_reviews WHERE review_status='Pending Review')potential_duplicate_items,
+        (SELECT COUNT(*) FROM items WHERE deleted_at IS NULL AND active_yn=0)inactive_items,
+        (SELECT COUNT(*) FROM items WHERE deleted_at IS NULL AND active_yn=1 AND COALESCE(reorder_level,0)<=0)items_missing_reorder_level,
+        (SELECT COUNT(*) FROM employees e WHERE e.deleted_at IS NULL AND e.status='Active' AND EXISTS(SELECT 1 FROM employee_availability a WHERE a.employee_id=e.id AND date('now') BETWEEN a.date_from AND a.date_to AND a.availability_status<>'Available'))employees_unavailable_today,
+        (SELECT COUNT(*) FROM employees e JOIN departments d ON d.id=e.department_id WHERE e.deleted_at IS NULL AND e.status='Active' AND lower(d.name)='warehouse')active_warehouse_employees,
+        (SELECT COUNT(*) FROM employees e JOIN departments d ON d.id=e.department_id WHERE e.deleted_at IS NULL AND e.status='Active' AND lower(d.name)='procurement')active_procurement_employees,
+        (SELECT COUNT(*) FROM calendar_coverage_warnings WHERE warning_status='OPEN' AND calendar_date=date('now'))coverage_warnings,
+        (SELECT COUNT(*) FROM employee_work_calendar WHERE calendar_date>=date('now') AND status IN('DRAFT','PROVISIONAL'))unpublished_entries""") or {}
+    workforce = fetch_one("""SELECT
+        SUM(CASE WHEN c.day_type='WORKDAY' AND (lower(COALESCE(s.shift_code,'')) LIKE '%morning%' OR time(COALESCE(c.shift_start,s.start_time))<'12:00') THEN 1 ELSE 0 END)morning_today,
+        SUM(CASE WHEN c.day_type='WORKDAY' AND (lower(COALESCE(s.shift_code,'')) LIKE '%afternoon%' OR time(COALESCE(c.shift_start,s.start_time)) BETWEEN '12:00' AND '17:59') THEN 1 ELSE 0 END)afternoon_today,
+        SUM(CASE WHEN c.day_type='WORKDAY' AND (lower(COALESCE(s.shift_code,'')) LIKE '%evening%' OR time(COALESCE(c.shift_start,s.start_time))>='18:00') THEN 1 ELSE 0 END)evening_today,
+        SUM(c.day_type='OFF')off_today,SUM(c.day_type='HOLIDAY_WORKING')holiday_workers_today
+        FROM employee_work_calendar c LEFT JOIN shifts s ON s.id=c.shift_id WHERE c.calendar_date=date('now')""") or {}
+    approvals = fetch_one("""SELECT (SELECT COUNT(*)FROM purchase_orders WHERE status='PendingApproval')+
+        (SELECT COUNT(*)FROM purchase_requisitions WHERE status='Submitted')+(SELECT COUNT(*)FROM material_issues WHERE status='PendingApproval')+
+        (SELECT COUNT(*)FROM stock_adjustments WHERE status='Pending')value""")['value']
+    p_trend, c_trend = month_series(purchase, ['value']), month_series(consumption, ['value'])
+    upcoming_holiday=fetch_one("SELECT holiday_name,holiday_type,COALESCE(observed_date,holiday_date) holiday_date,country_code,region FROM holidays WHERE active_yn=1 AND date(COALESCE(observed_date,holiday_date))>=date('now') ORDER BY date(COALESCE(observed_date,holiday_date)),id LIMIT 1")or{}
+    backup=backup_schedule();last_backup=fetch_one("SELECT created_at,backup_status FROM backup_restore_history WHERE backup_status='SUCCESS' ORDER BY id DESC LIMIT 1")or{}
+    for row in p_trend + c_trend:
+        row['total_value'] = row['value']
+    return {
+        'generated_at': fetch_one("SELECT datetime('now')value")['value'],
+        'dashboard_profile': 'executive' if user['role'] == 'SupplyChainManager' else 'procurement' if user['role'] in ['PurchaseManager', 'PurchaseOfficer'] else 'warehouse',
+        'scope_warehouse_ids': [] if user['role'] == 'SupplyChainManager' else user.get('warehouse_ids', []),
+        'company_name': company.get('name'), 'company_logo_url': company.get('logo_url'), 'financial_year': company.get('financial_year'),
+        'total_inventory_value': round(float(inventory_value or 0), 2), 'monthly_purchase': round(float(monthly_purchase or 0), 2),
+        'monthly_consumption': round(float(monthly_consumption or 0), 2), 'low_stock_items': int(stock.get('low_stock_items') or 0),
+        'out_of_stock_items': int(stock.get('out_of_stock_items') or 0), 'pending_approvals': int(approvals or 0),
+        'purchase_trend': p_trend, 'consumption_trend': c_trend,
+        'stock_movement_trend': month_series(movement, ['stock_in', 'stock_out']),
+        'invoice_match_trend': month_series(invoice_trend, ['matched', 'exceptions', 'pending']),
+        'po_status_distribution': [{'label': r['status'], 'value': r['value']} for r in fetch_all('SELECT status,COUNT(*)value FROM purchase_orders GROUP BY status ORDER BY status')],
+        'warehouse_values': warehouse_values, 'department_consumption': departments,
+        'upcoming_public_holiday':upcoming_holiday,'next_backup_at_utc':backup['scheduled_utc'].isoformat(),'backup_time_zone':backup['time_zone'],'last_successful_backup':last_backup,
+        **{key: 0 if value is None else value for key, value in counts.items()},
+        **{key: int(value or 0) for key, value in workforce.items()},
+    }

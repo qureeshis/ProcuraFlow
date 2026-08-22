@@ -1,0 +1,717 @@
+[2m8:59:18 PM[22m [33m[1m[vite][22m[39m [33mwarning: `esbuild` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `oxc` instead.[39m
+`optimizeDeps.rollupOptions` / `ssr.optimizeDeps.rollupOptions` is deprecated. Use `optimizeDeps.rolldownOptions` instead. Note that this option may be set by a plugin. Set VITE_DEPRECATION_TRACE=1 to see where it is called.
+[vite:react-babel] We recommend switching to `@vitejs/plugin-react-oxc` for improved performance. More information at https://vite.dev/rolldown
+[2m8:59:23 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m8:59:23 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m8:59:23 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/settings/branding[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m8:59:23 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/auth/me[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m8:59:23 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/settings/branding[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m8:59:24 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mAxiosError[22m: Request failed with status code 502
+[39m > settle ../frontend/node_modules/axios/lib/core/settle.js:19:11
+ > XMLHttpRequest.onloadend ../frontend/node_modules/axios/lib/adapters/xhr.js:63:8
+
+[2m8:59:24 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/auth/me[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m8:59:24 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mAxiosError[22m: Request failed with status code 502
+[39m > settle ../frontend/node_modules/axios/lib/core/settle.js:19:11
+ > XMLHttpRequest.onloadend ../frontend/node_modules/axios/lib/adapters/xhr.js:63:8
+
+[2m8:59:24 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/settings/company[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m8:59:24 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/dashboard/activity/heartbeat[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m8:59:24 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/dashboard/activity/heartbeat[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m8:59:24 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/masters/warehouses[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m8:59:24 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/masters/locations[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m8:59:24 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/workforce/reference[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m8:59:24 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/masters/warehouses[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m8:59:24 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/masters/locations[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m8:59:24 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/workforce/reference[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m8:59:39 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/dashboard/activity/heartbeat[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m8:59:54 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/dashboard/activity/heartbeat[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m9:00:09 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/dashboard/activity/heartbeat[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m9:00:48 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m9:00:48 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m9:18:04 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m9:18:04 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m9:45:54 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m9:45:54 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m11:25:52 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m11:25:52 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m12:18:34 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m12:18:34 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m12:19:27 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m12:19:27 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m12:24:55 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m12:24:55 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m12:38:40 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m12:38:40 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m12:54:40 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m12:54:40 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m1:07:02 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m1:07:02 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m1:08:36 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m1:08:36 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m1:15:36 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m1:15:36 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m1:18:13 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m1:18:13 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m1:22:56 AM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/dashboard/activity/heartbeat[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m1:23:15 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m1:23:15 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m1:26:15 AM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/dashboard/activity/heartbeat[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m1:26:15 AM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/settings/maintenance/status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m1:27:34 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m1:27:34 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m1:34:49 AM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/dashboard/activity/heartbeat[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m1:35:35 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m1:35:35 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m1:55:47 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m1:55:47 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m2:08:19 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m2:08:19 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m2:09:12 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m2:09:12 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m2:17:42 AM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/dashboard/activity/heartbeat[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m2:17:42 AM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/settings/maintenance/status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m2:36:44 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'po_number')
+[39m > po_number src/pages/procurement/POPage.js:269:2101
+    267 |                                          setApproving(null);
+    268 |                                          load();
+    269 |  ...)), doc && (_jsx(Modal, { title: `Purchase Order — ${doc.po.po_number}`, onClose: () => setDoc(null), wide: true, ...
+        |                                                                 ^
+    270 |  }
+    271 |  
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > HTMLUnknownElement.callCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m2:36:44 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'po_number')
+[39m > po_number src/pages/procurement/POPage.js:269:2101
+    267 |                                          setApproving(null);
+    268 |                                          load();
+    269 |  ...)), doc && (_jsx(Modal, { title: `Purchase Order — ${doc.po.po_number}`, onClose: () => setDoc(null), wide: true, ...
+        |                                                                 ^
+    270 |  }
+    271 |  
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > HTMLUnknownElement.callCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m2:36:44 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in the <POPage> component:
+
+    at POPage (http://localhost:5175/src/pages/procurement/POPage.js:86:43)
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786844376990:31:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786860026636:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786860026636:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m2:36:44 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'po_number')
+[39m > po_number src/pages/procurement/POPage.js:269:2101
+    267 |                                          setApproving(null);
+    268 |                                          load();
+    269 |  ...)), doc && (_jsx(Modal, { title: `Purchase Order — ${doc.po.po_number}`, onClose: () => setDoc(null), wide: true, ...
+        |                                                                 ^
+    270 |  }
+    271 |  
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27465:13
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+ > renderRootSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26473:6
+ > recoverFromConcurrentError ../frontend/node_modules/react-dom/cjs/react-dom.development.js:25889:19
+ > performConcurrentWorkOnRoot ../frontend/node_modules/react-dom/cjs/react-dom.development.js:25789:21
+
+[2m2:36:51 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m2:36:51 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m2:36:55 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'po_number')
+[39m > po_number src/pages/procurement/POPage.js:269:2101
+    267 |                                          setApproving(null);
+    268 |                                          load();
+    269 |  ...)), doc && (_jsx(Modal, { title: `Purchase Order — ${doc.po.po_number}`, onClose: () => setDoc(null), wide: true, ...
+        |                                                                 ^
+    270 |  }
+    271 |  
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > HTMLUnknownElement.callCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m2:36:55 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'po_number')
+[39m > po_number src/pages/procurement/POPage.js:269:2101
+    267 |                                          setApproving(null);
+    268 |                                          load();
+    269 |  ...)), doc && (_jsx(Modal, { title: `Purchase Order — ${doc.po.po_number}`, onClose: () => setDoc(null), wide: true, ...
+        |                                                                 ^
+    270 |  }
+    271 |  
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > HTMLUnknownElement.callCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m2:36:55 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in the <POPage> component:
+
+    at POPage (http://localhost:5175/src/pages/procurement/POPage.js:86:43)
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786844376990:31:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786860026636:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786860026636:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m2:36:55 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'po_number')
+[39m > po_number src/pages/procurement/POPage.js:269:2101
+    267 |                                          setApproving(null);
+    268 |                                          load();
+    269 |  ...)), doc && (_jsx(Modal, { title: `Purchase Order — ${doc.po.po_number}`, onClose: () => setDoc(null), wide: true, ...
+        |                                                                 ^
+    270 |  }
+    271 |  
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27465:13
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+ > renderRootSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26473:6
+ > recoverFromConcurrentError ../frontend/node_modules/react-dom/cjs/react-dom.development.js:25889:19
+ > performConcurrentWorkOnRoot ../frontend/node_modules/react-dom/cjs/react-dom.development.js:25789:21
+
+[2m2:36:58 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m2:36:58 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m2:37:13 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m2:37:13 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m2:45:23 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m2:45:23 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m2:45:48 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'supplier_name')
+[39m > supplier_name src/pages/procurement/POPage.js:265:2120
+    263 |                                                  const wholeNumber = ['EA', 'PCS', 'PC', 'BOX', 'BAG', 'SET', 'PR', 'P...
+    264 |                                                  return _jsxs(_Fragment, { children: [_jsxs("div", { className: "col-s...
+    265 |  ...-500", children: "Supplier:" }), " ", approving.document.po.supplier_name] }), _jsxs("table", { className: "table-...
+        |                                                                 ^
+    266 |                                          alert('Signed management approval uploaded. The PO is now approved and ready ...
+    267 |                                          setApproving(null);
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > HTMLUnknownElement.callCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m2:45:48 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'supplier_name')
+[39m > supplier_name src/pages/procurement/POPage.js:265:2120
+    263 |                                                  const wholeNumber = ['EA', 'PCS', 'PC', 'BOX', 'BAG', 'SET', 'PR', 'P...
+    264 |                                                  return _jsxs(_Fragment, { children: [_jsxs("div", { className: "col-s...
+    265 |  ...-500", children: "Supplier:" }), " ", approving.document.po.supplier_name] }), _jsxs("table", { className: "table-...
+        |                                                                 ^
+    266 |                                          alert('Signed management approval uploaded. The PO is now approved and ready ...
+    267 |                                          setApproving(null);
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > HTMLUnknownElement.callCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m2:45:48 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in the <POPage> component:
+
+    at POPage (http://localhost:5175/src/pages/procurement/POPage.js:86:43)
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786844376990:31:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786862533745:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786862533745:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m2:45:48 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'supplier_name')
+[39m > supplier_name src/pages/procurement/POPage.js:265:2120
+    263 |                                                  const wholeNumber = ['EA', 'PCS', 'PC', 'BOX', 'BAG', 'SET', 'PR', 'P...
+    264 |                                                  return _jsxs(_Fragment, { children: [_jsxs("div", { className: "col-s...
+    265 |  ...-500", children: "Supplier:" }), " ", approving.document.po.supplier_name] }), _jsxs("table", { className: "table-...
+        |                                                                 ^
+    266 |                                          alert('Signed management approval uploaded. The PO is now approved and ready ...
+    267 |                                          setApproving(null);
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27465:13
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+ > renderRootSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26473:6
+ > recoverFromConcurrentError ../frontend/node_modules/react-dom/cjs/react-dom.development.js:25889:19
+ > performConcurrentWorkOnRoot ../frontend/node_modules/react-dom/cjs/react-dom.development.js:25789:21
+
+[2m2:45:56 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m2:45:56 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m2:46:03 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'po_number')
+[39m > po_number src/pages/procurement/POPage.js:269:2101
+    267 |                                          setApproving(null);
+    268 |                                          load();
+    269 |  ...)), doc && (_jsx(Modal, { title: `Purchase Order — ${doc.po.po_number}`, onClose: () => setDoc(null), wide: true, ...
+        |                                                                 ^
+    270 |  }
+    271 |  
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > HTMLUnknownElement.callCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m2:46:03 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'po_number')
+[39m > po_number src/pages/procurement/POPage.js:269:2101
+    267 |                                          setApproving(null);
+    268 |                                          load();
+    269 |  ...)), doc && (_jsx(Modal, { title: `Purchase Order — ${doc.po.po_number}`, onClose: () => setDoc(null), wide: true, ...
+        |                                                                 ^
+    270 |  }
+    271 |  
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > HTMLUnknownElement.callCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m2:46:03 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in the <POPage> component:
+
+    at POPage (http://localhost:5175/src/pages/procurement/POPage.js:86:43)
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786844376990:31:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786862533745:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786862533745:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m2:46:03 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'po_number')
+[39m > po_number src/pages/procurement/POPage.js:269:2101
+    267 |                                          setApproving(null);
+    268 |                                          load();
+    269 |  ...)), doc && (_jsx(Modal, { title: `Purchase Order — ${doc.po.po_number}`, onClose: () => setDoc(null), wide: true, ...
+        |                                                                 ^
+    270 |  }
+    271 |  
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27465:13
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+ > renderRootSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26473:6
+ > recoverFromConcurrentError ../frontend/node_modules/react-dom/cjs/react-dom.development.js:25889:19
+ > performConcurrentWorkOnRoot ../frontend/node_modules/react-dom/cjs/react-dom.development.js:25789:21
+
+[2m2:46:07 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m2:46:07 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m2:50:05 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m2:50:05 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m2:55:45 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m2:55:45 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m2:55:49 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'po_number')
+[39m > po_number src/pages/procurement/POPage.js:269:2101
+    267 |                                          setApproving(null);
+    268 |                                          load();
+    269 |  ...)), doc && (_jsx(Modal, { title: `Purchase Order — ${doc.po.po_number}`, onClose: () => setDoc(null), wide: true, ...
+        |                                                                 ^
+    270 |  }
+    271 |  
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > HTMLUnknownElement.callCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m2:55:49 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'po_number')
+[39m > po_number src/pages/procurement/POPage.js:269:2101
+    267 |                                          setApproving(null);
+    268 |                                          load();
+    269 |  ...)), doc && (_jsx(Modal, { title: `Purchase Order — ${doc.po.po_number}`, onClose: () => setDoc(null), wide: true, ...
+        |                                                                 ^
+    270 |  }
+    271 |  
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > HTMLUnknownElement.callCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m2:55:49 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in the <POPage> component:
+
+    at POPage (http://localhost:5175/src/pages/procurement/POPage.js?t=1786863081955:86:43)
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786844376990:31:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786863156324:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786863156324:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+    at PageErrorBoundary (http://localhost:5175/src/components/PageErrorBoundary.jsx:8:3)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PageErrorBoundary.
+[2m2:55:49 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mProcuraFlow page rendering failed TypeError: Cannot read properties of undefined (reading 'po_number')
+    at POPage (http://localhost:5175/src/pages/procurement/POPage.js?t=1786863081955:775:41)
+    at renderWithHooks (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:9603:19)
+    at updateFunctionComponent (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:12092:19)
+    at beginWork (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:13063:13)
+    at beginWork$1 (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15927:12)
+    at performUnitOfWork (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15513:12)
+    at workLoopSync (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15462:36)
+    at renderRootSync (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15445:6)
+    at recoverFromConcurrentError (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15138:21)
+    at performConcurrentWorkOnRoot (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15091:20) {"componentStack":"\n    at POPage (http://localhost:5175/src/pages/procurement/POPage.js?t=1786863081955:86:43)\n    at main\n    at div\n    at div\n    at Layout (http://localhost:5175/src/components/Layout.js?t=1786844376990:31:3)\n    at RoleRoute (http://localhost:5175/src/App.js?t=1786863156324:125:3)\n    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)\n    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)\n    at Suspense\n    at App (http://localhost:5175/src/App.js?t=1786863156324:160:7)\n    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)\n    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)\n    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)\n    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)\n    at PageErrorBoundary (http://localhost:5175/src/components/PageErrorBoundary.jsx:8:3)"}
+[2m2:55:54 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m2:55:54 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m2:55:56 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'po_number')
+[39m > po_number src/pages/procurement/POPage.js:269:2101
+    267 |                                          setApproving(null);
+    268 |                                          load();
+    269 |  ...)), doc && (_jsx(Modal, { title: `Purchase Order — ${doc.po.po_number}`, onClose: () => setDoc(null), wide: true, ...
+        |                                                                 ^
+    270 |  }
+    271 |  
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > HTMLUnknownElement.callCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m2:55:56 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'po_number')
+[39m > po_number src/pages/procurement/POPage.js:269:2101
+    267 |                                          setApproving(null);
+    268 |                                          load();
+    269 |  ...)), doc && (_jsx(Modal, { title: `Purchase Order — ${doc.po.po_number}`, onClose: () => setDoc(null), wide: true, ...
+        |                                                                 ^
+    270 |  }
+    271 |  
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > HTMLUnknownElement.callCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m2:55:56 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in the <POPage> component:
+
+    at POPage (http://localhost:5175/src/pages/procurement/POPage.js?t=1786863081955:86:43)
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786844376990:31:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786863156324:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786863156324:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+    at PageErrorBoundary (http://localhost:5175/src/components/PageErrorBoundary.jsx:8:3)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PageErrorBoundary.
+[2m2:55:56 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mProcuraFlow page rendering failed TypeError: Cannot read properties of undefined (reading 'po_number')
+    at POPage (http://localhost:5175/src/pages/procurement/POPage.js?t=1786863081955:775:41)
+    at renderWithHooks (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:9603:19)
+    at updateFunctionComponent (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:12092:19)
+    at beginWork (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:13063:13)
+    at beginWork$1 (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15927:12)
+    at performUnitOfWork (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15513:12)
+    at workLoopSync (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15462:36)
+    at renderRootSync (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15445:6)
+    at recoverFromConcurrentError (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15138:21)
+    at performConcurrentWorkOnRoot (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15091:20) {"componentStack":"\n    at POPage (http://localhost:5175/src/pages/procurement/POPage.js?t=1786863081955:86:43)\n    at main\n    at div\n    at div\n    at Layout (http://localhost:5175/src/components/Layout.js?t=1786844376990:31:3)\n    at RoleRoute (http://localhost:5175/src/App.js?t=1786863156324:125:3)\n    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)\n    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)\n    at Suspense\n    at App (http://localhost:5175/src/App.js?t=1786863156324:160:7)\n    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)\n    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)\n    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)\n    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)\n    at PageErrorBoundary (http://localhost:5175/src/components/PageErrorBoundary.jsx:8:3)"}
+[2m2:56:08 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m2:56:08 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m2:56:37 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'po_number')
+[39m > po_number src/pages/procurement/POPage.js:269:2101
+    267 |                                          setApproving(null);
+    268 |                                          load();
+    269 |  ...)), doc && (_jsx(Modal, { title: `Purchase Order — ${doc.po.po_number}`, onClose: () => setDoc(null), wide: true, ...
+        |                                                                 ^
+    270 |  }
+    271 |  
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > HTMLUnknownElement.callCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m2:56:37 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'po_number')
+[39m > po_number src/pages/procurement/POPage.js:269:2101
+    267 |                                          setApproving(null);
+    268 |                                          load();
+    269 |  ...)), doc && (_jsx(Modal, { title: `Purchase Order — ${doc.po.po_number}`, onClose: () => setDoc(null), wide: true, ...
+        |                                                                 ^
+    270 |  }
+    271 |  
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > HTMLUnknownElement.callCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m2:56:37 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in the <POPage> component:
+
+    at POPage (http://localhost:5175/src/pages/procurement/POPage.js?t=1786863081955:86:43)
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786844376990:31:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786863156324:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786863156324:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+    at PageErrorBoundary (http://localhost:5175/src/components/PageErrorBoundary.jsx:8:3)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PageErrorBoundary.
+[2m2:56:37 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mProcuraFlow page rendering failed TypeError: Cannot read properties of undefined (reading 'po_number')
+    at POPage (http://localhost:5175/src/pages/procurement/POPage.js?t=1786863081955:775:41)
+    at renderWithHooks (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:9603:19)
+    at updateFunctionComponent (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:12092:19)
+    at beginWork (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:13063:13)
+    at beginWork$1 (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15927:12)
+    at performUnitOfWork (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15513:12)
+    at workLoopSync (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15462:36)
+    at renderRootSync (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15445:6)
+    at recoverFromConcurrentError (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15138:21)
+    at performConcurrentWorkOnRoot (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15091:20) {"componentStack":"\n    at POPage (http://localhost:5175/src/pages/procurement/POPage.js?t=1786863081955:86:43)\n    at main\n    at div\n    at div\n    at Layout (http://localhost:5175/src/components/Layout.js?t=1786844376990:31:3)\n    at RoleRoute (http://localhost:5175/src/App.js?t=1786863156324:125:3)\n    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)\n    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)\n    at Suspense\n    at App (http://localhost:5175/src/App.js?t=1786863156324:160:7)\n    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)\n    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)\n    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)\n    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)\n    at PageErrorBoundary (http://localhost:5175/src/components/PageErrorBoundary.jsx:8:3)"}
+[2m2:56:39 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m2:56:39 AM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m2:56:42 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'po_number')
+[39m > po_number src/pages/procurement/POPage.js:269:2101
+    267 |                                          setApproving(null);
+    268 |                                          load();
+    269 |  ...)), doc && (_jsx(Modal, { title: `Purchase Order — ${doc.po.po_number}`, onClose: () => setDoc(null), wide: true, ...
+        |                                                                 ^
+    270 |  }
+    271 |  
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > HTMLUnknownElement.callCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m2:56:42 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Cannot read properties of undefined (reading 'po_number')
+[39m > po_number src/pages/procurement/POPage.js:269:2101
+    267 |                                          setApproving(null);
+    268 |                                          load();
+    269 |  ...)), doc && (_jsx(Modal, { title: `Purchase Order — ${doc.po.po_number}`, onClose: () => setDoc(null), wide: true, ...
+        |                                                                 ^
+    270 |  }
+    271 |  
+ > renderWithHooks ../frontend/node_modules/react-dom/cjs/react-dom.development.js:15486:17
+ > updateFunctionComponent ../frontend/node_modules/react-dom/cjs/react-dom.development.js:19617:19
+ > beginWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:21640:15
+ > HTMLUnknownElement.callCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:13
+ > Object.invokeGuardedCallbackDev ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:15
+ > invokeGuardedCallback ../frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:30
+ > beginWork$1 ../frontend/node_modules/react-dom/cjs/react-dom.development.js:27490:6
+ > performUnitOfWork ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26596:11
+ > workLoopSync ../frontend/node_modules/react-dom/cjs/react-dom.development.js:26505:4
+
+[2m2:56:42 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in the <POPage> component:
+
+    at POPage (http://localhost:5175/src/pages/procurement/POPage.js?t=1786863081955:86:43)
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786844376990:31:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786863156324:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786863156324:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+    at PageErrorBoundary (http://localhost:5175/src/components/PageErrorBoundary.jsx:8:3)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, PageErrorBoundary.
+[2m2:56:42 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mProcuraFlow page rendering failed TypeError: Cannot read properties of undefined (reading 'po_number')
+    at POPage (http://localhost:5175/src/pages/procurement/POPage.js?t=1786863081955:775:41)
+    at renderWithHooks (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:9603:19)
+    at updateFunctionComponent (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:12092:19)
+    at beginWork (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:13063:13)
+    at beginWork$1 (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15927:12)
+    at performUnitOfWork (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15513:12)
+    at workLoopSync (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15462:36)
+    at renderRootSync (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15445:6)
+    at recoverFromConcurrentError (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15138:21)
+    at performConcurrentWorkOnRoot (http://localhost:5175/node_modules/.vite/deps/react-dom-8NLUv1Se.js?v=573e0493:15091:20) {"componentStack":"\n    at POPage (http://localhost:5175/src/pages/procurement/POPage.js?t=1786863081955:86:43)\n    at main\n    at div\n    at div\n    at Layout (http://localhost:5175/src/components/Layout.js?t=1786844376990:31:3)\n    at RoleRoute (http://localhost:5175/src/App.js?t=1786863156324:125:3)\n    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)\n    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)\n    at Suspense\n    at App (http://localhost:5175/src/App.js?t=1786863156324:160:7)\n    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)\n    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)\n    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)\n    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)\n    at PageErrorBoundary (http://localhost:5175/src/components/PageErrorBoundary.jsx:8:3)"}

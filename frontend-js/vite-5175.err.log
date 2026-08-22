@@ -1,0 +1,398 @@
+[2m4:04:25 PM[22m [33m[1m[vite][22m[39m [33mwarning: `esbuild` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `oxc` instead.[39m
+`optimizeDeps.rollupOptions` / `ssr.optimizeDeps.rollupOptions` is deprecated. Use `optimizeDeps.rolldownOptions` instead. Note that this option may be set by a plugin. Set VITE_DEPRECATION_TRACE=1 to see where it is called.
+[vite:react-babel] We recommend switching to `@vitejs/plugin-react-oxc` for improved performance. More information at https://vite.dev/rolldown
+[2m4:04:32 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m4:04:32 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m4:05:06 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m4:05:06 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m4:05:35 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m4:05:35 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m4:06:25 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mAxiosError[22m: Request failed with status code 404
+[39m > settle ../frontend/node_modules/axios/lib/core/settle.js:19:11
+ > XMLHttpRequest.onloadend ../frontend/node_modules/axios/lib/adapters/xhr.js:63:8
+
+[2m4:06:25 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mAxiosError[22m: Request failed with status code 404
+[39m > settle ../frontend/node_modules/axios/lib/core/settle.js:19:11
+ > XMLHttpRequest.onloadend ../frontend/node_modules/axios/lib/adapters/xhr.js:63:8
+
+[2m4:24:30 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mAxiosError[22m: Request failed with status code 404
+[39m > settle ../frontend/node_modules/axios/lib/core/settle.js:19:11
+ > XMLHttpRequest.onloadend ../frontend/node_modules/axios/lib/adapters/xhr.js:63:8
+
+[2m4:24:30 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mAxiosError[22m: Request failed with status code 404
+[39m > settle ../frontend/node_modules/axios/lib/core/settle.js:19:11
+ > XMLHttpRequest.onloadend ../frontend/node_modules/axios/lib/adapters/xhr.js:63:8
+
+[2m4:31:53 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m4:31:53 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m4:33:18 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m4:33:18 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m4:47:36 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m4:47:36 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m4:52:40 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m4:52:40 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m5:00:47 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m5:00:47 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m5:09:24 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m5:09:24 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m5:15:14 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m5:15:14 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m5:23:51 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/dashboard/activity/heartbeat[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m5:43:44 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m5:43:44 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m6:05:29 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m6:05:29 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m6:14:21 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js
+[39m
+[2m6:14:21 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js
+[39m
+[2m6:14:21 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in the <main> component:
+
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786824758732:30:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786831196218:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786831196218:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m6:14:21 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js
+[39m
+[2m6:15:06 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js
+[39m
+[2m6:15:06 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js
+[39m
+[2m6:15:06 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in one of your React components:
+
+    at Lazy
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786824758732:30:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786831196218:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786831196218:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m6:15:06 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js
+[39m
+[2m6:15:16 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js
+[39m
+[2m6:15:16 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js
+[39m
+[2m6:15:16 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in one of your React components:
+
+    at Lazy
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786824758732:30:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786831196218:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786831196218:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m6:15:16 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js
+[39m
+[2m6:19:16 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m6:19:16 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m6:19:16 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m6:19:16 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m6:19:16 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in one of your React components:
+
+    at Lazy
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786824758732:30:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786832115124:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786832115124:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m6:19:16 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m6:19:23 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m6:19:23 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m6:19:23 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m6:19:23 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m6:19:23 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in one of your React components:
+
+    at Lazy
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786824758732:30:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786832115124:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786832115124:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m6:19:23 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m6:19:26 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m6:19:26 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m6:19:26 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m6:19:26 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m6:19:26 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in one of your React components:
+
+    at Lazy
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786824758732:30:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786832115124:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786832115124:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m6:19:26 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m6:19:33 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m6:19:33 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m7:23:43 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m7:23:43 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m7:26:47 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m7:26:47 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m7:41:44 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m7:41:44 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m7:45:00 PM[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/dashboard/activity/heartbeat[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1135:18)
+    at afterConnectMultiple (node:net:1716:7)
+[2m8:12:15 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:12:15 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:12:15 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in the <main> component:
+
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786824758732:30:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786836317204:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786836317204:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m8:12:15 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:13:09 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:13:09 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:13:09 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in one of your React components:
+
+    at Lazy
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786824758732:30:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786836317204:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786836317204:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m8:13:09 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:14:25 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m8:14:25 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m8:14:25 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:14:25 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:14:25 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in one of your React components:
+
+    at Lazy
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786824758732:30:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786839188525:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786839188525:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m8:14:25 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:14:29 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m8:14:29 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m8:19:19 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m8:19:19 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m8:32:01 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:32:01 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:32:01 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in the <main> component:
+
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786824758732:30:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786839534132:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786839534132:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m8:32:01 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:32:10 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m8:32:10 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m8:32:15 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:32:15 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:32:15 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in one of your React components:
+
+    at Lazy
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786824758732:30:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786839534132:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786839534132:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m8:32:15 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:35:44 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m8:35:44 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m8:35:44 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:35:44 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:35:44 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in one of your React components:
+
+    at Lazy
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786824758732:30:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786839534132:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786839534132:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m8:35:44 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:35:49 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+[2m8:35:49 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+[2m8:35:59 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:35:59 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
+[2m8:35:59 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mThe above error occurred in the <main> component:
+
+    at main
+    at div
+    at div
+    at Layout (http://localhost:5175/src/components/Layout.js?t=1786824758732:30:3)
+    at RoleRoute (http://localhost:5175/src/App.js?t=1786839534132:125:3)
+    at RenderedRoute (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3329:8)
+    at Routes (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3772:8)
+    at Suspense
+    at App (http://localhost:5175/src/App.js?t=1786839534132:160:7)
+    at AuthProvider (http://localhost:5175/src/contexts/AuthContext.js:27:3)
+    at BrandingProvider (http://localhost:5175/src/contexts/BrandingContext.js:36:3)
+    at Router (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:3720:18)
+    at BrowserRouter (http://localhost:5175/node_modules/.vite/deps/react-router-dom.js?v=573e0493:4397:8)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+[2m8:35:59 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled error] [1mTypeError[22m: Failed to fetch dynamically imported module: http://localhost:5175/src/pages/masters/WarehousesPage.js?t=1786832044759
+[39m
