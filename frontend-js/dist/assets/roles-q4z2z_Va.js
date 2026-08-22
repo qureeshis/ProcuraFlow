@@ -1,1 +1,0 @@
-import{l as e}from"./index-DMRJr3ot.js";function t(t){return t?e[t]||t.replace(/[_-]+/g,` `).replace(/([a-z0-9])([A-Z])/g,`$1 $2`).replace(/\b\w/g,e=>e.toUpperCase()):`—`}export{t};
