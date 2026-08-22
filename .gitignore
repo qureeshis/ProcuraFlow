@@ -1,0 +1,49 @@
+# Environment configuration (may contain deployment URLs or secrets)
+.env
+.env.*
+!.env.example
+!**/.env.example
+
+# Node / Vite
+node_modules/
+dist/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local databases and runtime files
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.log
+
+# Operating systems and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test and coverage output
+.coverage
+htmlcov/
+coverage/
+
+# Temporary files
+*.tmp
+*.temp
+~$*
