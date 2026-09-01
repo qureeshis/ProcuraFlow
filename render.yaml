@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: procuraflow-backend
+    runtime: python
+    rootDir: backend-python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    disk:
+      name: procuraflow-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.7
+      - key: DB_PATH
+        value: /var/data/procuraflow.db
+      - key: TENANT_DATA_DIR
+        value: /var/data/tenants
+      - key: UPLOADS_DIR
+        value: /var/data/uploads
+      - key: BACKUPS_DIR
+        value: /var/data/backups
+      - key: ALLOW_MULTIPLE_COMPANIES
+        value: true
+      - key: TRUST_PROXY
+        value: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGINS
+        sync: false

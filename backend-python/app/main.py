@@ -29,11 +29,11 @@ from .routes.controls import router as controls_router
 from .backup_service import scheduler_loop
 from .tenancy import tenant_record
 from .database import reset_database, use_database
+from .storage import upload_path
 import jwt
 
 app = FastAPI(title="ProcuraFlow", description="Precast Supply Chain Control System", docs_url=None, redoc_url=None)
-LOGO_DIRECTORY = Path(__file__).resolve().parents[1] / 'uploads' / 'logos'
-LOGO_DIRECTORY.mkdir(parents=True, exist_ok=True)
+LOGO_DIRECTORY = upload_path('logos')
 app.mount('/uploads/logos', StaticFiles(directory=LOGO_DIRECTORY), name='company-logos')
 
 @app.exception_handler(HTTPException)

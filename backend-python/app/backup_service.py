@@ -8,8 +8,9 @@ from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 from .audit import log_audit
 from . import database
+from .storage import backup_path
 
-BACKUPS=Path(__file__).resolve().parents[1]/'backups';BACKUPS.mkdir(exist_ok=True)
+BACKUPS=backup_path()
 CRITICAL_TABLES=('users','employees','items','warehouses','inventory_stock','inventory_layers','stock_ledger','audit_log')
 
 def setting(connection,key,default):

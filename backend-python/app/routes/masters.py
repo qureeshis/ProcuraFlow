@@ -12,9 +12,10 @@ from ..database import connect,fetch_all, fetch_one
 from ..database import transaction
 from ..permissions import defaults_for_role
 from ..security import User, roles
+from ..storage import upload_path
 
 router = APIRouter(prefix='/api/masters', tags=['masters'])
-SIGNATURES=Path(__file__).resolve().parents[2]/'uploads'/'signatures';SIGNATURES.mkdir(parents=True,exist_ok=True)
+SIGNATURES=upload_path('signatures')
 MGMT = ['SupplyChainManager','PurchaseManager','WarehouseManager']
 
 router.include_router(crud_router('/company','company',['name','address','phone','email','website','registration_number','branch_info','logo_url','tax_info','currency','country_code','city_id','postal_code','region_province','financial_year'],soft_delete=True,write_roles=['SupplyChainManager']))

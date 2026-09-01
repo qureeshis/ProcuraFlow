@@ -9,7 +9,8 @@ from ..database import active_db_path,fetch_all,fetch_one,transaction
 from ..security import User,roles
 from ..stock import receive
 from ..backup_service import backup_schedule,verify_backup,scheduler_tick
-router=APIRouter(prefix='/api/settings',tags=['settings']);admin=roles('SupplyChainManager');ROOT=Path(__file__).resolve().parents[3];UPLOADS=Path(__file__).resolve().parents[2]/'uploads';BACKUPS=ROOT/'backend-python'/'backups';BACKUPS.mkdir(exist_ok=True)
+from ..storage import UPLOADS_ROOT,backup_path,upload_path
+router=APIRouter(prefix='/api/settings',tags=['settings']);admin=roles('SupplyChainManager');ROOT=Path(__file__).resolve().parents[3];UPLOADS=UPLOADS_ROOT;BACKUPS=backup_path()
 @router.get('')
 def all_settings(_u:User):return {x['key']:x['value']for x in fetch_all('SELECT key,value FROM settings')}
 @router.get('/approval-limits')
@@ -97,7 +98,7 @@ async def company_logo(user:dict=Depends(admin),logo:UploadFile=File(...)):
     if len(data)>5*1024*1024 or not(valid_png or valid_jpeg):raise HTTPException(400,'Select a valid PNG or JPG logo no larger than 5 MB')
     active=fetch_one('SELECT id,logo_url FROM company WHERE deleted_at IS NULL ORDER BY id DESC LIMIT 1')
     if not active:raise HTTPException(404,'Active company record not found')
-    ext='.png'if logo.content_type=='image/png'else'.jpg';folder=UPLOADS/'logos';folder.mkdir(parents=True,exist_ok=True);name='company-logo-'+secrets.token_hex(6)+ext;(folder/name).write_bytes(data);url='/uploads/logos/'+name
+    ext='.png'if logo.content_type=='image/png'else'.jpg';folder=upload_path('logos');name='company-logo-'+secrets.token_hex(6)+ext;(folder/name).write_bytes(data);url='/uploads/logos/'+name
     try:
         with transaction(immediate=True)as c:c.execute('UPDATE company SET logo_url=? WHERE id=?',(url,active['id']));log_audit(c,'company',active['id'],'UPDATE',user['id'],{'logo_url':active.get('logo_url')},{'logo_url':url})
     except Exception:

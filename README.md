@@ -5,26 +5,26 @@ ProcuraFlow is a role-controlled procurement, warehouse, inventory, employee-acc
 ## Technology
 
 - React, TypeScript, Tailwind CSS, Vite
-- Node.js, Express, TypeScript
+- Python, FastAPI
 - SQLite with WAL mode, foreign keys, transactional stock posting, permanent stock ledger, and FIFO layers
 
 ## Local startup
 
-Prerequisite: Node.js 18 or later.
+Prerequisites: Python 3.13 and Node.js 18 or later.
 
 Backend:
 
 ```powershell
-cd backend
+cd backend-python
 Copy-Item .env.example .env
-npm install
-npm run dev
+..\..\venv\Scripts\python.exe -m pip install -r requirements.txt
+.\run.ps1
 ```
 
 Frontend:
 
 ```powershell
-cd frontend
+cd frontend-js
 npm install
 npm run dev
 ```
@@ -34,11 +34,10 @@ Open `http://localhost:5173`. Sign in with an active employee login created thro
 ## Release verification
 
 ```powershell
-cd backend
-npm run build
-npm run audit:db
+cd backend-python
+..\..\venv\Scripts\python.exe -m pytest tests/test_smoke.py tests/test_database_bootstrap.py tests/test_tenant_registration_isolation.py
 
-cd ..\frontend
+cd ..\frontend-js
 npm run build
 ```
 
@@ -54,12 +53,44 @@ npm run audit:db
 
 The repair command automatically creates a timestamped database backup in `backend/backups` before changing data.
 
+## Demo Deployment
+
+For a hosted feedback demo, keep all backend runtime data on Render's persistent
+disk. The included `render.yaml` mounts that disk at `/var/data` and points the
+database, tenants, uploads, and backups there:
+
+- `DB_PATH=/var/data/procuraflow.db`
+- `TENANT_DATA_DIR=/var/data/tenants`
+- `UPLOADS_DIR=/var/data/uploads`
+- `BACKUPS_DIR=/var/data/backups`
+
+`ALLOW_MULTIPLE_COMPANIES=true` is set in `render.yaml` so different feedback
+testers can register their own demo company workspaces. If you want everyone to
+use one shared company login instead, set it to `false` after the first company
+is registered.
+
+On Vercel, add this frontend environment variable and redeploy:
+
+```text
+VITE_API_URL=https://your-render-backend-url.onrender.com/api
+```
+
+On Render, set `CORS_ORIGINS` to the deployed Vercel URL, for example:
+
+```text
+https://your-vercel-app.vercel.app
+```
+
+SQLite is fine for a light demo, but do not remove the Render disk or the saved
+feedback data will be lost.
+
 ## Production configuration
 
 Before deployment:
 
 - Replace `JWT_SECRET` with a strong random secret.
-- Set `DB_PATH=./procuraflow.db` or an approved absolute data path.
+- Set `DB_PATH`, `TENANT_DATA_DIR`, `UPLOADS_DIR`, and `BACKUPS_DIR` to approved
+  persistent storage paths.
 - Set `LICENSED_COMPANY_NAME` and `LICENSED_HOSTNAMES` for the purchased company installation.
 - Set a strict `CORS_ORIGINS` allowlist.
 - Terminate traffic through HTTPS and protect backups and uploaded evidence using operating-system access controls.
