@@ -2490,7 +2490,7 @@ button[class*="bg-red-"]:hover:not(:disabled) {
   height: 2.5rem;
   overflow: hidden;
   color: transparent !important;
-  background: url('/branding/procuraflow-logo.png?v=20260822') left center / contain no-repeat;
+  background: url('/branding/ProcuraFlow%20Logo.png?v=20260822') left center / contain no-repeat;
   font-size: 0 !important;
 }
 .report-product span { display: none; }

@@ -6,7 +6,7 @@ from ..audit import log_audit
 from ..database import fetch_all,fetch_one,transaction
 from ..security import User
 
-router=APIRouter(prefix='/api/attachments',tags=['attachments']);ROOT=Path(__file__).resolve().parents[3];DOCS=ROOT/'backend'/'uploads'/'documents';DOCS.mkdir(parents=True,exist_ok=True)
+router=APIRouter(prefix='/api/attachments',tags=['attachments']);DOCS=Path(__file__).resolve().parents[2]/'uploads'/'documents';DOCS.mkdir(parents=True,exist_ok=True)
 PROC=['SupplyChainManager','PurchaseManager','PurchaseOfficer'];WAREHOUSE=['SupplyChainManager','WarehouseManager','WarehouseSupervisor','Storekeeper'];ACCESS={'PR':PROC+['WarehouseManager','WarehouseSupervisor','Storekeeper'],'PO':PROC+['WarehouseManager','WarehouseSupervisor','Storekeeper'],'GRN':WAREHOUSE,'INVOICE':PROC,'MANUAL_APPROVAL':PROC,'RFQ':PROC,'QUOTATION':PROC,'AWARD':['SupplyChainManager','PurchaseManager']};UPLOAD={**ACCESS,'PO':PROC,'GRN':WAREHOUSE,'MANUAL_APPROVAL':['SupplyChainManager'],'RFQ':PROC,'QUOTATION':PROC,'AWARD':['SupplyChainManager','PurchaseManager']}
 def exists(kind,row_id):return fetch_one(f"SELECT id FROM {'purchase_requisitions' if kind=='PR' else 'purchase_orders' if kind in ['PO','MANUAL_APPROVAL'] else 'grns' if kind=='GRN' else 'invoices' if kind=='INVOICE' else 'rfqs' if kind=='RFQ' else 'rfq_awards' if kind=='AWARD' else 'supplier_quotations'} WHERE id=?",(row_id,))
 def check(kind,row_id,user,write=False):

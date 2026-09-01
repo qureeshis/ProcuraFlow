@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { useBranding } from "../contexts/BrandingContext";
-import { CompanyBrand, ProductBrand } from "./Branding";
+import { CompanyBrand } from "./Branding";
 const ROLE_VISIBILITY = {
   SupplyChainManager: [
     "overview",
@@ -439,7 +439,11 @@ export default function Sidebar() {
     children: [
       _jsx("div", {
         className: "px-5 py-5 border-b border-white/10",
-        children: _jsx(ProductBrand, { compact: true, inverse: true }),
+        children: _jsx("div", {
+          className:
+            "rounded-xl bg-white px-4 py-4 text-center text-lg font-bold text-slate-950 shadow-sm",
+          children: "ProcuraFlow",
+        }),
       }),
       _jsx("nav", {
         className: "py-3 flex-1",
